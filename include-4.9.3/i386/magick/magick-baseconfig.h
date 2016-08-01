@@ -66,7 +66,9 @@
 #endif
 
 /* Define if you have FFTW library */
-/* #undef FFTW_DELEGATE */
+#ifndef MAGICKCORE_FFTW_DELEGATE
+#define MAGICKCORE_FFTW_DELEGATE 1
+#endif
 
 /* filter subdirectory. */
 #ifndef MAGICKCORE_FILTER_DIRNAME
@@ -1115,7 +1117,7 @@
 
 /* Define to the full name and version of this package. */
 #ifndef MAGICKCORE_PACKAGE_STRING
-#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.5-3"
+#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.5-4"
 #endif
 
 /* Define to the one symbol short name of this package. */
@@ -1130,7 +1132,7 @@
 
 /* Define to the version of this package. */
 #ifndef MAGICKCORE_PACKAGE_VERSION
-#define MAGICKCORE_PACKAGE_VERSION "6.9.5-3"
+#define MAGICKCORE_PACKAGE_VERSION "6.9.5-4"
 #endif
 
 /* Define if you have PANGOCAIRO library */
@@ -1340,11 +1342,13 @@
 
 /* Version number of package */
 #ifndef MAGICKCORE_VERSION
-#define MAGICKCORE_VERSION "6.9.5-3"
+#define MAGICKCORE_VERSION "6.9.5-4"
 #endif
 
 /* Define if you have WEBP library */
-/* #undef WEBP_DELEGATE */
+#ifndef MAGICKCORE_WEBP_DELEGATE
+#define MAGICKCORE_WEBP_DELEGATE 1
+#endif
 
 /* Define to use the Windows GDI32 library */
 #ifndef MAGICKCORE_WINGDI32_DELEGATE
@@ -1371,7 +1375,7 @@
 
 /* Location of X11 configure files */
 #ifndef MAGICKCORE_X11_CONFIGURE_PATH
-#define MAGICKCORE_X11_CONFIGURE_PATH "/home/Jeroen/imagemagick/ImageMagick-6.9.5-3/winpath.sh: path "=" is not mounted"
+#define MAGICKCORE_X11_CONFIGURE_PATH "/home/Jeroen/imagemagick/ImageMagick-6.9.5-4/winpath.sh: path "=" is not mounted"
 #endif
 
 /* Define if you have X11 library */

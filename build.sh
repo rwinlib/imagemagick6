@@ -6,8 +6,8 @@ export CPPFLAGS="-m64 -I/c/msys64-x64/mingw64/include -DLIBXML_STATIC"
 export CFLAGS="-m64 -I/c/msys64-x64/mingw64/include -DLIBXML_STATIC"
 export CXXLAGS="-m64 -I/c/msys64-x64/mingw64/include -DLIBXML_STATIC"
 export LDFLAGS="-m64 -L/c/msys64-x64/mingw64/lib"
-  ../ImageMagick-6.9.5-3/configure \
-    --enable-zero-configuration
+  ../ImageMagick-6.9.5-4/configure \
+    --enable-zero-configuration \
     --disable-deprecated \
     --disable-dependency-tracking \
     --disable-silent-rules \
@@ -24,7 +24,7 @@ export LDFLAGS="-m64 -L/c/msys64-x64/mingw64/lib"
     --without-gvc \
     --without-raqm \
     --without-djvu \
-    --without-fftw \
+    --with-fftw \
     --with-gslib \
     --without-lcms \
     --without-lqr \
@@ -32,7 +32,7 @@ export LDFLAGS="-m64 -L/c/msys64-x64/mingw64/lib"
     --without-openjp2 \
     --without-jbig \
     --enable-opencl \
-    --without-webp \
+    --with-webp \
     --without-lcms \
     --without-rsvg \
     --without-perl \
