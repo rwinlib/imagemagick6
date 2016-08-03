@@ -22,7 +22,7 @@ Based off the [rwinlib-librsvg](https://github.com/rwinlib/rsvg) 2.40.16 bundle
     PREFIX          = /usr/local
     VERSION         = 6.9.5
     CC              = gcc -std=gnu99 -std=gnu99
-    CPPFLAGS        = -m64 -I/c/msys2-x64/mingw64/include -DLIBXML_STATIC -DGLIB_STATIC_COMPILATION -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -D_LIB
+    CPPFLAGS        = -DLIBXML_STATIC -DGLIB_STATIC_COMPILATION -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16
     PCFLAGS         = 
     DEFS            = -DHAVE_CONFIG_H
     LDFLAGS         = -m64 -L/c/msys2-x64/mingw64/lib
