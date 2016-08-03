@@ -20,7 +20,9 @@
 #endif
 
 /* Define if you have CAIRO library */
-/* #undef CAIRO_DELEGATE */
+#ifndef MAGICKCORE_CAIRO_DELEGATE
+#define MAGICKCORE_CAIRO_DELEGATE 1
+#endif
 
 /* permit enciphering and deciphering image pixels */
 #ifndef MAGICKCORE_CIPHER_SUPPORT
@@ -358,7 +360,9 @@
 #endif
 
 /* Define if you have the <lcms2.h> header file. */
-/* #undef HAVE_LCMS2_H */
+#ifndef MAGICKCORE_HAVE_LCMS2_H
+#define MAGICKCORE_HAVE_LCMS2_H 1
+#endif
 
 /* Define if you have the <lcms2/lcms2.h> header file. */
 /* #undef HAVE_LCMS2_LCMS2_H */
@@ -1031,7 +1035,9 @@
 #endif
 
 /* Define if you have LCMS library */
-/* #undef LCMS_DELEGATE */
+#ifndef MAGICKCORE_LCMS_DELEGATE
+#define MAGICKCORE_LCMS_DELEGATE 1
+#endif
 
 /* Define if you have OPENJP2 library */
 /* #undef LIBOPENJP2_DELEGATE */
@@ -1140,10 +1146,14 @@
 #endif
 
 /* Define if you have PANGOCAIRO library */
-/* #undef PANGOCAIRO_DELEGATE */
+#ifndef MAGICKCORE_PANGOCAIRO_DELEGATE
+#define MAGICKCORE_PANGOCAIRO_DELEGATE 1
+#endif
 
 /* Define if you have PANGO library */
-/* #undef PANGO_DELEGATE */
+#ifndef MAGICKCORE_PANGO_DELEGATE
+#define MAGICKCORE_PANGO_DELEGATE 1
+#endif
 
 /* enable pipes (|) in filenames */
 /* #undef PIPES_SUPPORT */
@@ -1174,7 +1184,9 @@
 #endif
 
 /* Define if you have RSVG library */
-/* #undef RSVG_DELEGATE */
+#ifndef MAGICKCORE_RSVG_DELEGATE
+#define MAGICKCORE_RSVG_DELEGATE 1
+#endif
 
 /* Define to the type of arg 1 for `select'. */
 #ifndef MAGICKCORE_SELECT_TYPE_ARG1
