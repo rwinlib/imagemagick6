@@ -1,47 +1,34 @@
-Based off the [rwinlib-librsvg](https://github.com/rwinlib/rsvg) 2.40.16 bundle
+# ImageMagick 6
+
+Stack build from July 28, 2017. The glib2 related packages are compiled from 
+source (using [rtools32](rtools32.sh) / [rtools64](rtools64.sh) because they
+require special macros for static linking. 
+
+ - imagemagick 6.9.9.3
+ - librsvg 2.40.18
+ - cairo 1.15.6
+ - pango 1.40.6
+ - glib2 2.52.3
+ - gdk-pixbuf2 2.36.6
+ - harfbuzz (--without-graphite2) 1.4.6
+
+Also everything was built without introspection bindings. To build use e.g.
 
 ```
-  Shared libraries  --enable-shared=no		no
-  Static libraries  --enable-static=yes		yes
-  Module support    --with-modules=no		no
-  GNU ld            --with-gnu-ld=yes		yes
-  Quantum depth     --with-quantum-depth=16	16
-  High Dynamic Range Imagery
-                    --enable-hdri=no		no
-
- Font Configuration:
-  Windows fonts     --with-windows-font-dir=c:/Windows/fonts	c:/Windows/fonts/
-
-  X11 Configuration:
-        X_CFLAGS        = 
-        X_PRE_LIBS      = 
-        X_LIBS          = 
-        X_EXTRA_LIBS    = 
-
-  Options used to compile and link:
-    PREFIX          = /usr/local
-    VERSION         = 6.9.5
-    CC              = gcc -std=gnu99 -std=gnu99
-    CPPFLAGS        = -DLIBXML_STATIC -DGLIB_STATIC_COMPILATION -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16
-    PCFLAGS         = 
-    DEFS            = -DHAVE_CONFIG_H
-    LDFLAGS         = -m64 -L/c/msys2-x64/mingw64/lib
-    LIBS            = -lOleAut32 -pthread -lws2_32
-    CXX             = g++
-    CXXFLAGS        = -g -O2
-    FEATURES        = DPC Zero-configuration Cipher
-    DELEGATES       = bzlib mpeg fftw freetype gslib jng jpeg lcms lzma pango png ps rsvg tiff webp xml zlib                    
+source rtools64
+makepkg-mingw --skippgpcheck
 ```
 
-Magick++ library is sensitive to compiler but dependencies are not. 
-Compiled imagemagick with msys + Rtools, while linking against msys2 
-C libraries. See `build32.sh` and `build64.sh` scripts
+Other packages were taken from msys2 binaries:
 
-All IM patches were merged upstream in ImageMagick 6.9.5-3. 
-Patches for librsvg and dependencies are descriped in the repo above.
+ - freetype 2.8
+ - bzip2 1.0.6
+ - lcms2 2.8
+ - libpng 1.6.30
+ - libtiff 4.0.8
+ - fftw 3.3.6-pl2
+ - zlib 1.2.11
 
-Flag "-pthread" is needed only for the old gcc-4.6.3 toolchain.
-
-The configure script didn't seem to support "-m64" properly so I ended up compiling
-the gcc-4.6.3 x64 library with gcc-4.6.4-release-posix-sjlj-rev0 instead.
-
+For some reason drawing, expecially text, is still very slow on Windows. Perhaps
+there is an issue with font finding. I have disabled fontconfig in imagemagick
+but it is still used by cairo and pango.

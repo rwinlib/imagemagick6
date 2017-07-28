@@ -1395,7 +1395,7 @@
 
 /* Location of X11 configure files */
 #ifndef MAGICKCORE_X11_CONFIGURE_PATH
-#define MAGICKCORE_X11_CONFIGURE_PATH "/home/Jeroen/mingw-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.9-3/winpath.sh: path "=" is not mounted"
+#define MAGICKCORE_X11_CONFIGURE_PATH "/home/Jeroen/mingw-w64-imagemagick/src/ImageMagick-6.9.9-3/winpath.sh: path "=" is not mounted"
 #endif
 
 /* Define if you have X11 library */
