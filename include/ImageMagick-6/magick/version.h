@@ -1,5 +1,5 @@
 /*
-  Copyright 1999-2016 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2017 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
   You may not use this file except in compliance with the License.
@@ -26,13 +26,13 @@ extern "C" {
   Define declarations.
 */
 #define MagickPackageName "ImageMagick"
-#define MagickCopyright  "Copyright (C) 1999-2016 ImageMagick Studio LLC"
-#define MagickLibVersion  0x695
-#define MagickLibVersionText  "6.9.5"
-#define MagickLibVersionNumber  2,0,0
-#define MagickLibAddendum  "-4"
-#define MagickLibInterface  2
-#define MagickLibMinInterface  2
+#define MagickCopyright  "© 1999-2017 ImageMagick Studio LLC"
+#define MagickLibVersion  0x699
+#define MagickLibVersionText  "6.9.9"
+#define MagickLibVersionNumber  5,0,0
+#define MagickLibAddendum  "-3"
+#define MagickLibInterface  5
+#define MagickLibMinInterface  5
 #if defined(_WINDOWS)
 #  if defined(_WIN64)
 #    define MagickPlatform "x64"
@@ -40,15 +40,15 @@ extern "C" {
 #    define MagickPlatform "x86"
 #  endif
 #else
-#define MagickPlatform  "i686"
+#define MagickPlatform  "x86_64"
 #endif
-#define MagickppLibVersionText  "6.9.5"
-#define MagickppLibVersionNumber  6:0:0
-#define MagickppLibAddendum  "-4"
-#define MagickppLibInterface  6
-#define MagickppLibMinInterface  6
-#define MagickReleaseDate  "2016-08-03"
-#define MagickHomeURL  "file:///usr/local/share/doc/ImageMagick-6/index.html"
+#define MagickppLibVersionText  "6.9.9"
+#define MagickppLibVersionNumber  8:0:0
+#define MagickppLibAddendum  "-3"
+#define MagickppLibInterface  8
+#define MagickppLibMinInterface  8
+#define MagickReleaseDate  "2017-07-27"
+#define MagickHomeURL  "file:///mingw64/share/doc/ImageMagick-6/index.html"
 #define MagickAuthoritativeLicense  \
   "http://www.imagemagick.org/script/license.php"
 #define MagickAuthoritativeURL  "http://www.imagemagick.org"

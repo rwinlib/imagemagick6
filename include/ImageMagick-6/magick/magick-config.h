@@ -5,7 +5,7 @@
   You may not use this file except in compliance with the License.
   obtain a copy of the License at
 
-    http://www.imagemagick.org/script/license.php
+    https://www.imagemagick.org/script/license.php
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -86,8 +86,13 @@ extern "C" {
 # if defined (_WIN32) || defined (_WIN64) || defined (__MSDOS__) || defined (__DJGPP__) || defined (__OS2__)
    /* Use Windows separators on all _WIN32 defining
       environments, except Cygwin. */
-#  define MAGICKCORE_DIR_SEPARATOR_CHAR		'\\'
-#  define MAGICKCORE_DIR_SEPARATOR		"\\"
+#  if defined (__MINGW32__)
+#    define MAGICKCORE_DIR_SEPARATOR_CHAR		'/'
+#    define MAGICKCORE_DIR_SEPARATOR		"/"
+#  else
+#    define MAGICKCORE_DIR_SEPARATOR_CHAR		'\\'
+#    define MAGICKCORE_DIR_SEPARATOR		"\\"
+#  endif
 #  define MAGICKCORE_PATH_SEPARATOR_CHAR	';'
 #  define MAGICKCORE_PATH_SEPARATOR		";"
 # endif
@@ -103,7 +108,7 @@ extern "C" {
 #  define MAGICKCORE_PATH_SEPARATOR		":"
 #endif /* !DIR_SEPARATOR_CHAR */
 
-# if defined(MAGICKCORE_POSIX_SUPPORT)
+# if defined(MAGICKCORE_POSIX_SUPPORT) || defined(__MINGW32__) || defined(__MINGW64__)
  
 /* module dir */
 #ifndef MAGICKCORE_MODULES_DIRNAME

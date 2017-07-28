@@ -1,0 +1,85 @@
+==============================================================================
+ImageMagick is configured as follows. Please verify that this configuration
+matches your expectations.
+
+  Host system type: x86_64-w64-mingw32
+  Build system type: x86_64-w64-mingw32
+
+                 Option                        Value
+  ------------------------------------------------------------------------------
+  Shared libraries  --enable-shared=no          no
+  Static libraries  --enable-static=yes         yes
+  Module support    --with-modules=no           no
+  GNU ld            --with-gnu-ld=yes           yes
+  Quantum depth     --with-quantum-depth=16     16
+  High Dynamic Range Imagery
+                    --enable-hdri=no            no
+
+  Install documentation:                        yes
+
+  Delegate Library Configuration:
+  BZLIB             --with-bzlib=yes            no (failed tests)
+  Autotrace         --with-autotrace=no         no
+  DJVU              --with-djvu=no              no
+  DPS               --with-dps=yes              no
+  FFTW              --with-fftw=yes             yes
+  FLIF              --with-flif=yes             no
+  FlashPIX          --with-fpx=yes              no
+  FontConfig        --with-fontconfig=no        no
+  FreeType          --with-freetype=yes         yes
+  Ghostscript lib   --with-gslib=yes            yes
+  Graphviz          --with-gvc=no
+  JBIG              --with-jbig=no              no
+  JPEG v1           --with-jpeg=yes             yes
+  LCMS              --with-lcms=yes             yes
+  LQR               --with-lqr=no               no
+  LTDL              --with-ltdl=yes             no
+  LZMA              --with-lzma=yes             yes
+  Magick++          --with-magick-plus-plus=yes yes
+  OpenEXR           --with-openexr=no           no
+  OpenJP2           --with-openjp2=no           no
+  PANGO             --with-pango=yes            yes
+  PERL              --with-perl=no              no
+  PNG               --with-png=yes              yes
+  RAQM              --with-raqm=no              no
+  RSVG              --with-rsvg=yes             yes
+  TIFF              --with-tiff=yes             yes
+  WEBP              --with-webp=yes             yes
+  WMF               --with-wmf=no               no
+  X11               --with-x=no                 no
+  XML               --with-xml=yes              yes
+  ZLIB              --with-zlib=yes             yes
+
+  Delegate Program Configuration:
+  GhostPCL          None                                pcl6 (unknown)
+  GhostXPS          None                                gxps (unknown)
+  Ghostscript       None                                gswin32c (9.21)
+
+  Font Configuration:
+  Apple fonts       --with-apple-font-dir=default
+  Dejavu fonts      --with-dejavu-font-dir=default      none
+  Ghostscript fonts --with-gs-font-dir=default  m:ingw64\bin\gsx\fonts\
+  Windows fonts     --with-windows-font-dir=c:/Windows/fonts    c:/Windows/fonts/
+
+  X11 Configuration:
+        X_CFLAGS        =
+        X_PRE_LIBS      =
+        X_LIBS          =
+        X_EXTRA_LIBS    =
+
+  Options used to compile and link:
+    PREFIX          = /mingw64
+    EXEC-PREFIX     = /mingw64
+    VERSION         = 6.9.9
+    CC              = c:/Rtools/mingw_64/bin/gcc -DLIBXML_STATIC -DGLIB_STATIC_COMPILATION -std=gnu99 -std=gnu99
+    CFLAGS          = -IC:/msys64/mingw64/include/libxml2 -mms-bitfields -IC:/msys64/mingw64/include/cairo -IC:/msys64/mingw64/include/pixman-1 -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/freetype2 -IC:/msys64/mingw64/include/libpng16 -IC:/msys64/mingw64/include/harfbuzz -IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/freetype2 -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/harfbuzz -IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/libpng16 -pthread -mms-bitfields -IC:/msys64/mingw64/include/librsvg-2.0 -IC:/msys64/mingw64/include/gdk-pixbuf-2.0 -IC:/msys64/mingw64/include/libpng16 -IC:/msys64/mingw64/include/cairo -IC:/msys64/mingw64/include/pixman-1 -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/freetype2 -IC:/msys64/mingw64/include/libpng16 -IC:/msys64/mingw64/include/harfbuzz -IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/freetype2 -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/harfbuzz -IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/libpng16 -IC:/msys64/mingw64/include/libpng16  -mms-bitfields -IC:/msys64/mingw64/include/pango-1.0 -IC:/msys64/mingw64/include/cairo -IC:/msys64/mingw64/include/pixman-1 -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/freetype2 -IC:/msys64/mingw64/include/libpng16 -IC:/msys64/mingw64/include/harfbuzz -IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/freetype2 -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/harfbuzz -IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/libpng16 -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include -mms-bitfields -IC:/msys64/mingw64/include/freetype2 -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include/libpng16 -IC:/msys64/mingw64/include/harfbuzz -IC:/msys64/mingw64/include/glib-2.0 -IC:/msys64/mingw64/lib/glib-2.0/include -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include -IC:/msys64/mingw64/include   -march=x86-64 -mtune=generic -O2 -pipe -Wall -mtune=x86-64 -fexceptions -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16
+    CPPFLAGS        =  -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -D_LIB
+    PCFLAGS         =
+    DEFS            = -DHAVE_CONFIG_H
+    LDFLAGS         = -pipe
+    LIBS            = -L/mingw64/lib
+    CXX             = c:/Rtools/mingw_64/bin/g++ -std=gnu++11 -DLIBXML_STATIC -DGLIB_STATIC_COMPILATION
+    CXXFLAGS        = -march=x86-64 -mtune=generic -O2 -pipe
+    FEATURES        = Zero-configuration Cipher
+    DELEGATES       = mpeg fftw freetype gslib jng jpeg lcms lzma pango png ps rsvg tiff webp xml zlib
+==============================================================================

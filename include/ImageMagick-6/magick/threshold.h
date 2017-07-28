@@ -1,11 +1,11 @@
 /*
-  Copyright 1999-2016 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2017 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
   You may not use this file except in compliance with the License.
   obtain a copy of the License at
   
-    http://www.imagemagick.org/script/license.php
+    https://www.imagemagick.org/script/license.php
   
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,6 +22,14 @@
 extern "C" {
 #endif
 
+typedef enum
+{
+  UndefinedThresholdMethod,
+  KapurThresholdMethod,
+  OTSUThresholdMethod,
+  TriangleThresholdMethod
+} AutoThresholdMethod;
+
 typedef struct _ThresholdMap
   ThresholdMap;
 
@@ -34,6 +42,7 @@ extern MagickExport ThresholdMap
   *GetThresholdMap(const char *,ExceptionInfo *);
 
 extern MagickExport MagickBooleanType
+  AutoThresholdImage(Image *,const AutoThresholdMethod,ExceptionInfo *),
   BilevelImage(Image *,const double),
   BilevelImageChannel(Image *,const ChannelType,const double),
   BlackThresholdImage(Image *,const char *),

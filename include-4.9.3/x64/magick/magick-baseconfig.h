@@ -15,9 +15,7 @@
 /* #undef BUILD_MODULES */
 
 /* Define if you have the bzip2 library */
-#ifndef MAGICKCORE_BZLIB_DELEGATE
-#define MAGICKCORE_BZLIB_DELEGATE 1
-#endif
+/* #undef BZLIB_DELEGATE */
 
 /* Define if you have CAIRO library */
 #ifndef MAGICKCORE_CAIRO_DELEGATE
@@ -39,7 +37,7 @@
 
 /* Directory where architecture-dependent configuration files live. */
 #ifndef MAGICKCORE_CONFIGURE_PATH
-#define MAGICKCORE_CONFIGURE_PATH "C:\\msys64\\local\\etc\\ImageMagick-6\\"
+#define MAGICKCORE_CONFIGURE_PATH "C:\\msys64\\mingw64\\etc\\ImageMagick-6\\"
 #endif
 
 /* Subdirectory of lib where architecture-dependent configuration files live.
@@ -53,7 +51,7 @@
 
 /* Directory where ImageMagick documents live. */
 #ifndef MAGICKCORE_DOCUMENTATION_PATH
-#define MAGICKCORE_DOCUMENTATION_PATH "C:\\msys64\\local\\share\\doc\\ImageMagick-6\\"
+#define MAGICKCORE_DOCUMENTATION_PATH "C:\\msys64\\mingw64\\share\\doc\\ImageMagick-6\\"
 #endif
 
 /* Define if you have Display Postscript */
@@ -64,7 +62,7 @@
 
 /* Directory where executables are installed. */
 #ifndef MAGICKCORE_EXECUTABLE_PATH
-#define MAGICKCORE_EXECUTABLE_PATH "C:\\msys64\\local\\bin\\"
+#define MAGICKCORE_EXECUTABLE_PATH "C:\\msys64\\mingw64\\bin\\"
 #endif
 
 /* Define if you have FFTW library */
@@ -153,6 +151,11 @@
 /* Define to 1 if you have the `clock' function. */
 #ifndef MAGICKCORE_HAVE_CLOCK
 #define MAGICKCORE_HAVE_CLOCK 1
+#endif
+
+/* Define to 1 if you have the `clock_getres' function. */
+#ifndef MAGICKCORE_HAVE_CLOCK_GETRES
+#define MAGICKCORE_HAVE_CLOCK_GETRES 1
 #endif
 
 /* Define to 1 if you have clock_gettime. */
@@ -541,9 +544,6 @@
 /* Define to 1 if you have the `rand_r' function. */
 /* #undef HAVE_RAND_R */
 
-/* Define to 1 if you have the `readdir_r' function. */
-/* #undef HAVE_READDIR_R */
-
 /* Define to 1 if you have the `readlink' function. */
 /* #undef HAVE_READLINK */
 
@@ -556,9 +556,7 @@
 #endif
 
 /* Define to 1 if you have the `select' function. */
-#ifndef MAGICKCORE_HAVE_SELECT
-#define MAGICKCORE_HAVE_SELECT 1
-#endif
+/* #undef HAVE_SELECT */
 
 /* Define to 1 if you have the `sendfile' function. */
 /* #undef HAVE_SENDFILE */
@@ -586,9 +584,7 @@
 /* #undef HAVE_SIGEMPTYSET */
 
 /* Define to 1 if you have the `socket' function. */
-#ifndef MAGICKCORE_HAVE_SOCKET
-#define MAGICKCORE_HAVE_SOCKET 1
-#endif
+/* #undef HAVE_SOCKET */
 
 /* Define to 1 if you have the `spawnvp' function. */
 #ifndef MAGICKCORE_HAVE_SPAWNVP
@@ -1013,12 +1009,12 @@
 
 /* Directory where ImageMagick architecture headers live. */
 #ifndef MAGICKCORE_INCLUDEARCH_PATH
-#define MAGICKCORE_INCLUDEARCH_PATH "C:\\msys64\\local\\include\\ImageMagick-6\\"
+#define MAGICKCORE_INCLUDEARCH_PATH "C:\\msys64\\mingw64\\include\\ImageMagick-6\\"
 #endif
 
 /* Directory where ImageMagick headers live. */
 #ifndef MAGICKCORE_INCLUDE_PATH
-#define MAGICKCORE_INCLUDE_PATH "C:\\msys64\\local\\include\\ImageMagick-6\\"
+#define MAGICKCORE_INCLUDE_PATH "C:\\msys64\\mingw64\\include\\ImageMagick-6\\"
 #endif
 
 /* ImageMagick is formally installed under prefix */
@@ -1044,13 +1040,13 @@
 
 /* Directory where architecture-dependent files live. */
 #ifndef MAGICKCORE_LIBRARY_PATH
-#define MAGICKCORE_LIBRARY_PATH "C:\\msys64\\local\\lib\\ImageMagick-6.9.5\\"
+#define MAGICKCORE_LIBRARY_PATH "C:\\msys64\\mingw64\\lib\\ImageMagick-6.9.9\\"
 #endif
 
 /* Subdirectory of lib where ImageMagick architecture dependent files are
    installed. */
 #ifndef MAGICKCORE_LIBRARY_RELATIVE_PATH
-#define MAGICKCORE_LIBRARY_RELATIVE_PATH "ImageMagick-6.9.5"
+#define MAGICKCORE_LIBRARY_RELATIVE_PATH "ImageMagick-6.9.9"
 #endif
 
 /* Binaries in libraries path base name (will be during install linked to bin)
@@ -1064,6 +1060,11 @@
 
 /* Define if using libltdl to support dynamically loadable modules */
 /* #undef LTDL_DELEGATE */
+
+/* Define if running the test suite so that test #27 works on MinGW. */
+#ifndef MAGICKCORE_LT_MINGW_STATIC_TESTSUITE_HACK
+#define MAGICKCORE_LT_MINGW_STATIC_TESTSUITE_HACK 1
+#endif
 
 /* Define to the sub-directory where libtool stores uninstalled libraries. */
 #ifndef MAGICKCORE_LT_OBJDIR
@@ -1080,7 +1081,7 @@
 
 /* Target Host CPU */
 #ifndef MAGICKCORE_MAGICK_TARGET_CPU
-#define MAGICKCORE_MAGICK_TARGET_CPU i686
+#define MAGICKCORE_MAGICK_TARGET_CPU x86_64
 #endif
 
 /* Target Host OS */
@@ -1090,7 +1091,7 @@
 
 /* Target Host Vendor */
 #ifndef MAGICKCORE_MAGICK_TARGET_VENDOR
-#define MAGICKCORE_MAGICK_TARGET_VENDOR pc
+#define MAGICKCORE_MAGICK_TARGET_VENDOR w64
 #endif
 
 /* Module directory name without ABI part. */
@@ -1127,7 +1128,7 @@
 
 /* Define to the full name and version of this package. */
 #ifndef MAGICKCORE_PACKAGE_STRING
-#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.5-4"
+#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.9-3"
 #endif
 
 /* Define to the one symbol short name of this package. */
@@ -1137,12 +1138,12 @@
 
 /* Define to the home page for this package. */
 #ifndef MAGICKCORE_PACKAGE_URL
-#define MAGICKCORE_PACKAGE_URL "http://www.imagemagick.org"
+#define MAGICKCORE_PACKAGE_URL "https://www.imagemagick.org"
 #endif
 
 /* Define to the version of this package. */
 #ifndef MAGICKCORE_PACKAGE_VERSION
-#define MAGICKCORE_PACKAGE_VERSION "6.9.5-4"
+#define MAGICKCORE_PACKAGE_VERSION "6.9.9-3"
 #endif
 
 /* Define if you have PANGOCAIRO library */
@@ -1177,6 +1178,9 @@
 
 /* Define if you have RAQM library */
 /* #undef RAQM_DELEGATE */
+
+/* Define if you have LIBRAW library */
+/* #undef RAW_R_DELEGATE */
 
 /* Define as the return type of signal handlers (`int' or `void'). */
 #ifndef MAGICKCORE_RETSIGTYPE
@@ -1213,7 +1217,7 @@
 
 /* Directory where architecture-independent configuration files live. */
 #ifndef MAGICKCORE_SHARE_PATH
-#define MAGICKCORE_SHARE_PATH "C:\\msys64\\local\\share\\ImageMagick-6\\"
+#define MAGICKCORE_SHARE_PATH "C:\\msys64\\mingw64\\share\\ImageMagick-6\\"
 #endif
 
 /* Subdirectory of lib where architecture-independent configuration files
@@ -1358,7 +1362,7 @@
 
 /* Version number of package */
 #ifndef MAGICKCORE_VERSION
-#define MAGICKCORE_VERSION "6.9.5-4"
+#define MAGICKCORE_VERSION "6.9.9-3"
 #endif
 
 /* Define if you have WEBP library */
@@ -1391,7 +1395,7 @@
 
 /* Location of X11 configure files */
 #ifndef MAGICKCORE_X11_CONFIGURE_PATH
-#define MAGICKCORE_X11_CONFIGURE_PATH "/home/Jeroen/imagemagick/ImageMagick-6.9.5-4/winpath.sh: path "=" is not mounted"
+#define MAGICKCORE_X11_CONFIGURE_PATH "/home/Jeroen/mingw-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.9-3/winpath.sh: path "=" is not mounted"
 #endif
 
 /* Define if you have X11 library */
