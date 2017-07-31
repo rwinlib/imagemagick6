@@ -32,3 +32,11 @@ Other packages were taken from msys2 binaries:
 For some reason drawing, expecially text, is still very slow on Windows. Perhaps
 there is an issue with font finding. I have disabled fontconfig in imagemagick
 but it is still used by cairo and pango.
+
+## Performance Bug
+
+Due to a strange performance issue in freetype I have commented out:
+
+    flags|=FT_LOAD_TARGET_LIGHT;
+
+In `src/magick/annotate.c`. This led to a 10x speedup. Hopefully we'll find the real problem.
