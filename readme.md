@@ -1,10 +1,10 @@
 # ImageMagick 6
 
-Stack build from July 28, 2017. The glib2 related packages are compiled from 
+Stack build from Aug 21, 2017. The glib2 related packages are compiled from 
 source (using [rtools32](rtools32.sh) / [rtools64](rtools64.sh) because they
 require special macros for static linking. 
 
- - imagemagick 6.9.9.3
+ - imagemagick 6.9.9-9
  - librsvg 2.40.18
  - cairo 1.15.6
  - pango 1.40.6

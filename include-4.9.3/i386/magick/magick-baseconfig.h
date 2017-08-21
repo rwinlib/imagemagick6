@@ -1128,7 +1128,7 @@
 
 /* Define to the full name and version of this package. */
 #ifndef MAGICKCORE_PACKAGE_STRING
-#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.9-4"
+#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.9-9"
 #endif
 
 /* Define to the one symbol short name of this package. */
@@ -1143,7 +1143,7 @@
 
 /* Define to the version of this package. */
 #ifndef MAGICKCORE_PACKAGE_VERSION
-#define MAGICKCORE_PACKAGE_VERSION "6.9.9-4"
+#define MAGICKCORE_PACKAGE_VERSION "6.9.9-9"
 #endif
 
 /* Define if you have PANGOCAIRO library */
@@ -1362,7 +1362,7 @@
 
 /* Version number of package */
 #ifndef MAGICKCORE_VERSION
-#define MAGICKCORE_VERSION "6.9.9-4"
+#define MAGICKCORE_VERSION "6.9.9-9"
 #endif
 
 /* Define if you have WEBP library */
@@ -1395,7 +1395,7 @@
 
 /* Location of X11 configure files */
 #ifndef MAGICKCORE_X11_CONFIGURE_PATH
-#define MAGICKCORE_X11_CONFIGURE_PATH "/home/Jeroen/mingw-w64-imagemagick/src/ImageMagick-6.9.9-4/winpath.sh: path "=" is not mounted"
+#define MAGICKCORE_X11_CONFIGURE_PATH "/home/Jeroen/mingw-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.9-9/winpath.sh: path "=" is not mounted"
 #endif
 
 /* Define if you have X11 library */
