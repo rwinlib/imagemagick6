@@ -30,7 +30,7 @@ extern "C" {
 #define MagickLibVersion  0x699
 #define MagickLibVersionText  "6.9.9"
 #define MagickLibVersionNumber  5,0,0
-#define MagickLibAddendum  "-9"
+#define MagickLibAddendum  "-14"
 #define MagickLibInterface  5
 #define MagickLibMinInterface  5
 #if defined(_WINDOWS)
@@ -44,10 +44,10 @@ extern "C" {
 #endif
 #define MagickppLibVersionText  "6.9.9"
 #define MagickppLibVersionNumber  8:0:0
-#define MagickppLibAddendum  "-9"
+#define MagickppLibAddendum  "-14"
 #define MagickppLibInterface  8
 #define MagickppLibMinInterface  8
-#define MagickReleaseDate  "2017-08-21"
+#define MagickReleaseDate  "2017-09-22"
 #define MagickHomeURL  "file:///mingw64/share/doc/ImageMagick-6/index.html"
 #define MagickAuthoritativeLicense  \
   "http://www.imagemagick.org/script/license.php"
