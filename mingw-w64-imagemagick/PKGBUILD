@@ -3,7 +3,7 @@
 _realname=imagemagick
 pkgbase="mingw-w64-${_realname}"
 pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}"
-pkgver=6.9.9.3
+pkgver=6.9.9.14
 pkgrel=1
 pkgdesc="An image viewing/manipulation program (mingw-w64)"
 arch=('any')
@@ -47,13 +47,12 @@ optdepends=("${MINGW_PACKAGE_PREFIX}-ghostscript: for Ghostscript support"
             #"${MINGW_PACKAGE_PREFIX}-libwebp: for WEBP support"
             )
 options=('staticlibs' 'strip' '!debug' 'libtool')
-source=(https://www.imagemagick.org/download/ImageMagick-${pkgver%.*}-${pkgver##*.}.tar.xz{,.asc}
+source=(https://dl.bintray.com/homebrew/mirror/imagemagick%406-6.9.9-14.tar.xz
         ImageMagick-6.8.8.1-mingw.patch
         001-relocate.patch
         002-build-fixes.patch
         winpath.patch)
-sha256sums=('2f43cd152715cd062b441c71a07018e047951adf6041004dd5b0cf6ec918cfad'
-            'SKIP'
+sha256sums=('SKIP'
             '90a650f92f6f77231ffbc109b12dba9acca01614d069f31886edaecc17112530'
             '81e24fe310103a4962098e1185b9b75354c4bfe162bb21e17bca074a418aac77'
             'SKIP'
@@ -66,6 +65,7 @@ prepare() {
   #patch -p1 -i ${srcdir}/001-relocate.patch
   patch -p1 -i ${srcdir}/002-build-fixes.patch 
   #patch -p1 -i ${srcdir}/winpath.patch 
+  sed -i 's#flags|=FT_LOAD_TARGET_LIGHT#//flags|=FT_LOAD_TARGET_LIGHT#g' magick/annotate.c
   autoreconf -fi
 }
 
@@ -86,6 +86,7 @@ build() {
     --disable-shared \
     --enable-static \
     --enable-opencl \
+	--without-flif \
     --with-magick-plus-plus \
     --with-rsvg \
     --with-webp \
