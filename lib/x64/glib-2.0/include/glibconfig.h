@@ -57,10 +57,10 @@ G_GNUC_EXTENSION typedef unsigned long long guint64;
 
 typedef signed long long gssize;
 typedef unsigned long long gsize;
-#define G_GSIZE_MODIFIER "z"
-#define G_GSSIZE_MODIFIER "z"
-#define G_GSIZE_FORMAT "zu"
-#define G_GSSIZE_FORMAT "zi"
+#define G_GSIZE_MODIFIER "ll"
+#define G_GSSIZE_MODIFIER "ll"
+#define G_GSIZE_FORMAT "llu"
+#define G_GSSIZE_FORMAT "lli"
 
 #define G_MAXSIZE	G_MAXUINT64
 #define G_MINSSIZE	G_MININT64
@@ -95,12 +95,13 @@ typedef unsigned long long guintptr;
 #endif
 
 #define GLIB_MAJOR_VERSION 2
-#define GLIB_MINOR_VERSION 48
-#define GLIB_MICRO_VERSION 1
+#define GLIB_MINOR_VERSION 58
+#define GLIB_MICRO_VERSION 3
 
 #define G_OS_WIN32
 #define G_PLATFORM_WIN32
-
+#define GLIB_STATIC_COMPILATION 1
+#define GOBJECT_STATIC_COMPILATION 1
 
 #define G_VA_COPY	va_copy
 
@@ -133,7 +134,7 @@ typedef unsigned long long guintptr;
 #endif
 
 #define G_THREADS_ENABLED
-#define G_THREADS_IMPL_WIN32
+#define G_THREADS_IMPL_POSIX
 
 #define G_ATOMIC_LOCK_FREE
 
@@ -173,6 +174,7 @@ typedef unsigned long long guintptr;
 #define G_MODULE_SUFFIX "dll"
 
 typedef void * GPid;
+#define G_PID_FORMAT "p"
 
 #define GLIB_SYSDEF_AF_UNIX 1
 #define GLIB_SYSDEF_AF_INET 2
@@ -181,6 +183,11 @@ typedef void * GPid;
 #define GLIB_SYSDEF_MSG_OOB 1
 #define GLIB_SYSDEF_MSG_PEEK 2
 #define GLIB_SYSDEF_MSG_DONTROUTE 4
+
+#define G_DIR_SEPARATOR '\\'
+#define G_DIR_SEPARATOR_S "\\"
+#define G_SEARCHPATH_SEPARATOR ';'
+#define G_SEARCHPATH_SEPARATOR_S ";"
 
 G_END_DECLS
 
