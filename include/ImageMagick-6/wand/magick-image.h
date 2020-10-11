@@ -1,11 +1,11 @@
 /*
-  Copyright 1999-2017 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2020 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
 
-  You may not use this file except in compliance with the License.
+  You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
 
-    https://www.imagemagick.org/script/license.php
+    https://imagemagick.org/script/license.php
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -121,8 +121,8 @@ extern WandExport MagickBooleanType
     const ssize_t,const ssize_t),
   MagickCompositeImageChannel(MagickWand *,const ChannelType,const MagickWand *,
     const CompositeOperator,const ssize_t,const ssize_t),
-  MagickCompositeImageGravity(MagickWand *,const MagickWand *,const CompositeOperator,
-    const GravityType),
+  MagickCompositeImageGravity(MagickWand *,const MagickWand *,
+    const CompositeOperator,const GravityType),
   MagickCompositeLayers(MagickWand *,const MagickWand *,const CompositeOperator,
     const ssize_t,const ssize_t),
   MagickConstituteImage(MagickWand *,const size_t,const size_t,const char *,
@@ -214,6 +214,13 @@ extern WandExport MagickBooleanType
   MagickLevelImage(MagickWand *,const double,const double,const double),
   MagickLevelImageChannel(MagickWand *,const ChannelType,const double,
     const double,const double),
+  MagickLevelImageColors(MagickWand *,const PixelWand *,const PixelWand *,
+    const MagickBooleanType),
+  MagickLevelImageColorsChannel(MagickWand *,const ChannelType,
+    const PixelWand *,const PixelWand *,const MagickBooleanType),
+  MagickLevelizeImage(MagickWand *,const double,const double,const double),
+  MagickLevelizeImageChannel(MagickWand *,const ChannelType,const double,
+    const double,const double),
   MagickLinearStretchImage(MagickWand *,const double,const double),
   MagickLiquidRescaleImage(MagickWand *,const size_t,const size_t,const double,
     const double),
@@ -223,10 +230,10 @@ extern WandExport MagickBooleanType
   MagickMinifyImage(MagickWand *),
   MagickModeImage(MagickWand *,const double),
   MagickModulateImage(MagickWand *,const double,const double,const double),
-  MagickMorphologyImage(MagickWand *,MorphologyMethod,const ssize_t,
-    KernelInfo *),
-  MagickMorphologyImageChannel(MagickWand *,const ChannelType,MorphologyMethod,
-    const ssize_t,KernelInfo *),
+  MagickMorphologyImage(MagickWand *,const MorphologyMethod,const ssize_t,
+    const KernelInfo *),
+  MagickMorphologyImageChannel(MagickWand *,const ChannelType,
+    const MorphologyMethod,const ssize_t,const KernelInfo *),
   MagickMotionBlurImage(MagickWand *,const double,const double,const double),
   MagickMotionBlurImageChannel(MagickWand *,const ChannelType,const double,
     const double,const double),
@@ -327,6 +334,8 @@ extern WandExport MagickBooleanType
   MagickSetImageRenderingIntent(MagickWand *,const RenderingIntent),
   MagickSetImageResolution(MagickWand *,const double,const double),
   MagickSetImageScene(MagickWand *,const size_t),
+  MagickSetImagePixelColor(MagickWand *,const ssize_t,const ssize_t,
+    const PixelWand *),
   MagickSetImageTicksPerSecond(MagickWand *,const ssize_t),
   MagickSetImageType(MagickWand *,const ImageType),
   MagickSetImageUnits(MagickWand *,const ResolutionType),

@@ -1,11 +1,11 @@
 /*
-  Copyright 1999-2017 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2020 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
-  You may not use this file except in compliance with the License.
+  You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
   
-    https://www.imagemagick.org/script/license.php
+    https://imagemagick.org/script/license.php
   
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -513,8 +513,8 @@ extern MagickExport Image
   *CloneImage(const Image *,const size_t,const size_t,const MagickBooleanType,
     ExceptionInfo *),
   *DestroyImage(Image *),
-  *GetImageClipMask(const Image *,ExceptionInfo *),
-  *GetImageMask(const Image *,ExceptionInfo *),
+  *GetImageClipMask(const Image *,ExceptionInfo *) magick_attribute((__pure__)),
+  *GetImageMask(const Image *,ExceptionInfo *) magick_attribute((__pure__)),
   *NewMagickImage(const ImageInfo *,const size_t,const size_t,
     const MagickPixelPacket *),
   *ReferenceImage(Image *),
@@ -532,12 +532,13 @@ extern MagickExport MagickBooleanType
   CopyImagePixels(Image *,const Image *,const RectangleInfo *,
     const OffsetInfo *,ExceptionInfo *),
   IsTaintImage(const Image *),
-  IsMagickConflict(const char *),
+  IsMagickConflict(const char *) magick_attribute((__pure__)),
   IsHighDynamicRangeImage(const Image *,ExceptionInfo *),
   IsImageObject(const Image *),
   ListMagickInfo(FILE *,ExceptionInfo *),
   ModifyImage(Image **,ExceptionInfo *),
   ResetImagePage(Image *,const char *),
+  ResetImagePixels(Image *,ExceptionInfo *),
   SetImageBackgroundColor(Image *),
   SetImageClipMask(Image *,const Image *),
   SetImageColor(Image *,const MagickPixelPacket *),

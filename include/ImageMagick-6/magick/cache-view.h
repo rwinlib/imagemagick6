@@ -1,11 +1,11 @@
 /*
-  Copyright 1999-2017 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2020 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
-  You may not use this file except in compliance with the License.
+  You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
   
-    https://www.imagemagick.org/script/license.php
+    https://imagemagick.org/script/license.php
   
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -57,13 +57,14 @@ extern MagickExport CacheView
   *DestroyCacheView(CacheView *);
 
 extern MagickExport ClassType
-  GetCacheViewStorageClass(const CacheView *);
+  GetCacheViewStorageClass(const CacheView *) magick_attribute((__pure__));
 
 extern MagickExport ColorspaceType
-  GetCacheViewColorspace(const CacheView *);
+  GetCacheViewColorspace(const CacheView *) magick_attribute((__pure__));
 
 extern MagickExport const IndexPacket
-  *GetCacheViewVirtualIndexQueue(const CacheView *);
+  *GetCacheViewVirtualIndexQueue(const CacheView *)
+    magick_attribute((__pure__));
 
 extern MagickExport const PixelPacket
   *GetCacheViewVirtualPixels(const CacheView *,const ssize_t,const ssize_t,
@@ -71,10 +72,10 @@ extern MagickExport const PixelPacket
   *GetCacheViewVirtualPixelQueue(const CacheView *) magick_hot_spot;
 
 extern MagickExport ExceptionInfo
-  *GetCacheViewException(const CacheView *);
+  *GetCacheViewException(const CacheView *) magick_attribute((__pure__));
 
 extern MagickExport IndexPacket
-  *GetCacheViewAuthenticIndexQueue(CacheView *);
+  *GetCacheViewAuthenticIndexQueue(CacheView *) magick_attribute((__pure__));
 
 extern MagickExport MagickBooleanType
   GetOneCacheViewAuthenticPixel(const CacheView *magick_restrict,const ssize_t,

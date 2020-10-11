@@ -1,11 +1,11 @@
 /*
-  Copyright 1999-2017 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2020 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
 
-  You may not use this file except in compliance with the License.
+  You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
 
-    https://www.imagemagick.org/script/license.php
+    https://imagemagick.org/script/license.php
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -111,7 +111,7 @@ static inline MagickRealType AbsolutePixelValue(const MagickRealType x)
 static inline Quantum ClampPixel(const MagickRealType value)
 { 
   if (value < 0.0f)
-    return(0); 
+    return((Quantum) 0); 
   if (value >= (MagickRealType) QuantumRange)
     return((Quantum) QuantumRange);
 #if !defined(MAGICKCORE_HDRI_SUPPORT)
@@ -141,6 +141,7 @@ static inline MagickRealType GetPixelLuma(const Image *magick_restrict image,
   MagickRealType
     intensity;
 
+  (void) image;
   intensity=(MagickRealType) (0.212656f*pixel->red+0.715158f*pixel->green+
     0.072186f*pixel->blue);
   return(intensity);
@@ -170,6 +171,8 @@ static inline MagickBooleanType IsPixelAtDepth(const Quantum pixel,
   Quantum
     quantum;
 
+  if (range == 0)
+    return(MagickTrue);
 #if !defined(MAGICKCORE_HDRI_SUPPORT)
   quantum=(Quantum) (((MagickRealType) QuantumRange*((QuantumAny)
     (((MagickRealType) range*pixel)/QuantumRange+0.5)))/range+0.5);

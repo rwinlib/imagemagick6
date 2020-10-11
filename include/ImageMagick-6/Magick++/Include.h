@@ -27,6 +27,9 @@
 #include <math.h>
 #include <sys/types.h>
 
+#include <errno.h>
+#include <stdint.h>
+
 #if defined(__BORLANDC__)
 # include <vcl.h> /* Borland C++ Builder 4.0 requirement */
 #endif // defined(__BORLANDC__)
@@ -51,7 +54,7 @@ namespace MagickCore
 // Borland C++Builder and MinGW builds.
 //
 #if defined(WIN32) && !defined(__CYGWIN__) && !defined(__MINGW32__)
-# define MagickCplusPlusDLLSupported
+#  define MagickCplusPlusDLLSupported
 #endif
 #if defined(MagickCplusPlusDLLSupported)
 #  if defined(_MT) && defined(_DLL) && !defined(_LIB) && !defined(STATIC_MAGICK)
@@ -74,58 +77,40 @@ namespace MagickCore
 #    endif
 #    if !defined(MAGICKCORE_IMPLEMENTATION)
 #      if defined(__GNUC__)
-#       define MagickPPExport __attribute__ ((dllimport))
+#        define MagickPPExport __attribute__ ((dllimport))
 #      else
-#       define MagickPPExport __declspec(dllimport)
+#        define MagickPPExport __declspec(dllimport)
 #      endif
 #      define MagickPPPrivate extern __declspec(dllimport)
-#      if defined(_VISUALC_)
-#        pragma message( "Magick++ lib DLL import" )
-#      endif
 #    else
 #      if defined(__BORLANDC__) || defined(__MINGW32__)
 #        define MagickPPExport __declspec(dllexport)
 #        define MagickPPPrivate __declspec(dllexport)
-#        if defined(__BORLANDC__)
-#          pragma message( "BCBMagick++ lib DLL export" )
-#        endif
 #      else
 #        if defined(__GNUC__)
-#         define MagickPPExport __attribute__ ((dllexport))
+#          define MagickPPExport __attribute__ ((dllexport))
 #        else
-#         define MagickPPExport __declspec(dllexport)
+#          define MagickPPExport __declspec(dllexport)
 #        endif
 #        define MagickPPPrivate extern __declspec(dllexport)
-#      endif
-#      if defined(_VISUALC_)
-#        pragma message( "Magick++ lib DLL export" )
 #      endif
 #    endif
 #  else
 #    define MagickPPExport
 #    define MagickPPPrivate
-#    if defined(_VISUALC_)
-#      pragma message( "Magick++ lib static interface" )
-#    endif
 #    if defined(_MSC_VER) && defined(STATIC_MAGICK) && !defined(NOAUTOLINK_MAGICK)
 #      if defined(_DEBUG)
 #        if defined(MAGICKCORE_BZLIB_DELEGATE)
 #          pragma comment(lib, "CORE_DB_bzlib_.lib")
 #        endif
-#        pragma comment(lib, "CORE_DB_coders_.lib")
+#        if defined(MAGICKCORE_CAIRO_DELEGATE)
+#          pragma comment(lib, "CORE_DB_cairo_.lib")
+#        endif
 #        if defined(MAGICKCORE_OPENEXR_DELEGATE)
 #          pragma comment(lib, "CORE_DB_exr_.lib")
 #        endif
-#        if defined(MAGICKCORE_LQR_DELEGATE)
-#          pragma comment(lib, "CORE_DB_ffi_.lib")
-#        endif
-#        pragma comment(lib, "CORE_DB_filters_.lib")
 #        if defined(MAGICKCORE_FLIF_DELEGATE)
 #          pragma comment(lib, "CORE_DB_flif_.lib")
-#        endif
-#        if defined(MAGICKCORE_LQR_DELEGATE)
-#          pragma comment(lib, "CORE_DB_glib_.lib")
-#          pragma comment(lib, "winmm.lib")
 #        endif
 #        if defined(MAGICKCORE_JBIG_DELEGATE)
 #          pragma comment(lib, "CORE_DB_jbig_.lib")
@@ -139,29 +124,37 @@ namespace MagickCore
 #        if defined(MAGICKCORE_LCMS_DELEGATE)
 #          pragma comment(lib, "CORE_DB_lcms_.lib")
 #        endif
-#        if defined(MAGICKCORE_LIBOPENJP2_DELEGATE)
-#          pragma comment(lib, "CORE_DB_openjpeg_.lib")
+#        if defined(MAGICKCORE_HEIC_DELEGATE)
+#          pragma comment(lib, "CORE_DB_libde265_.lib")
+#          pragma comment(lib, "CORE_DB_libheif_.lib")
 #        endif
-#        pragma comment(lib, "CORE_DB_libxml_.lib")
-#        if defined(MAGICKCORE_LQR_DELEGATE)
-#          pragma comment(lib, "CORE_DB_lqr_.lib")
-#        endif
-#        pragma comment(lib, "CORE_DB_magick_.lib")
-#        pragma comment(lib, "CORE_DB_Magick++_.lib")
-#        if defined(MAGICKCORE_PANGOCAIRO_DELEGATE)
-#          pragma comment(lib, "CORE_DB_cairo_.lib")
-#          pragma comment(lib, "CORE_DB_pango_.lib")
-#          pragma comment(lib, "CORE_DB_pixman_.lib")
-#        endif
-#        if defined(MAGICKCORE_PNG_DELEGATE)
-#          pragma comment(lib, "CORE_DB_png_.lib")
+#        if defined(MAGICKCORE_LZMA_DELEGATE)
+#          pragma comment(lib, "CORE_DB_lzma_.lib")
 #        endif
 #        if defined(MAGICKCORE_RAW_R_DELEGATE)
 #          pragma comment(lib, "CORE_DB_libraw_.lib")
 #        endif
 #        if defined(MAGICKCORE_RSVG_DELEGATE)
-#          pragma comment(lib, "CORE_DB_croco_.lib")
 #          pragma comment(lib, "CORE_DB_librsvg_.lib")
+#        endif
+#        if defined(MAGICKCORE_XML_DELEGATE)
+#          pragma comment(lib, "CORE_DB_libxml_.lib")
+#        endif
+#        if defined(MAGICKCORE_LQR_DELEGATE)
+#          pragma comment(lib, "CORE_DB_ffi_.lib")
+#          pragma comment(lib, "CORE_DB_glib_.lib")
+#          pragma comment(lib, "CORE_DB_lqr_.lib")
+#          pragma comment(lib, "winmm.lib")
+#        endif
+#        if defined(MAGICKCORE_LIBOPENJP2_DELEGATE)
+#          pragma comment(lib, "CORE_DB_openjpeg_.lib")
+#        endif
+#        if defined(MAGICKCORE_PANGOCAIRO_DELEGATE)
+#          pragma comment(lib, "CORE_DB_pango_.lib")
+#          pragma comment(lib, "CORE_DB_pixman_.lib")
+#        endif
+#        if defined(MAGICKCORE_PNG_DELEGATE)
+#          pragma comment(lib, "CORE_DB_png_.lib")
 #        endif
 #        if defined(MAGICKCORE_TIFF_DELEGATE)
 #          pragma comment(lib, "CORE_DB_tiff_.lib")
@@ -169,34 +162,29 @@ namespace MagickCore
 #        if defined(MAGICKCORE_FREETYPE_DELEGATE)
 #          pragma comment(lib, "CORE_DB_ttf_.lib")
 #        endif
-#        pragma comment(lib, "CORE_DB_wand_.lib")
 #        if defined(MAGICKCORE_WEBP_DELEGATE)
 #          pragma comment(lib, "CORE_DB_webp_.lib")
-#        endif
-#        if defined(MAGICKCORE_X11_DELEGATE)
-#          pragma comment(lib, "CORE_DB_xlib_.lib")
 #        endif
 #        if defined(MAGICKCORE_ZLIB_DELEGATE)
 #          pragma comment(lib, "CORE_DB_zlib_.lib")
 #        endif
+#        pragma comment(lib, "CORE_DB_coders_.lib")
+#        pragma comment(lib, "CORE_DB_filters_.lib")
+#        pragma comment(lib, "CORE_DB_Magick++_.lib")
+#        pragma comment(lib, "CORE_DB_MagickCore_.lib")
+#        pragma comment(lib, "CORE_DB_MagickWand_.lib")
 #      else
 #        if defined(MAGICKCORE_BZLIB_DELEGATE)
 #          pragma comment(lib, "CORE_RL_bzlib_.lib")
 #        endif
-#        pragma comment(lib, "CORE_RL_coders_.lib")
+#        if defined(MAGICKCORE_CAIRO_DELEGATE)
+#          pragma comment(lib, "CORE_RL_cairo_.lib")
+#        endif
 #        if defined(MAGICKCORE_OPENEXR_DELEGATE)
 #          pragma comment(lib, "CORE_RL_exr_.lib")
 #        endif
-#        if defined(MAGICKCORE_LQR_DELEGATE)
-#          pragma comment(lib, "CORE_RL_ffi_.lib")
-#        endif
-#        pragma comment(lib, "CORE_RL_filters_.lib")
 #        if defined(MAGICKCORE_FLIF_DELEGATE)
 #          pragma comment(lib, "CORE_RL_flif_.lib")
-#        endif
-#        if defined(MAGICKCORE_LQR_DELEGATE)
-#          pragma comment(lib, "CORE_RL_glib_.lib")
-#          pragma comment(lib, "winmm.lib")
 #        endif
 #        if defined(MAGICKCORE_JBIG_DELEGATE)
 #          pragma comment(lib, "CORE_RL_jbig_.lib")
@@ -210,29 +198,37 @@ namespace MagickCore
 #        if defined(MAGICKCORE_LCMS_DELEGATE)
 #          pragma comment(lib, "CORE_RL_lcms_.lib")
 #        endif
-#        if defined(MAGICKCORE_LIBOPENJP2_DELEGATE)
-#          pragma comment(lib, "CORE_RL_openjpeg_.lib")
+#        if defined(MAGICKCORE_HEIC_DELEGATE)
+#          pragma comment(lib, "CORE_RL_libde265_.lib")
+#          pragma comment(lib, "CORE_RL_libheif_.lib")
 #        endif
-#        pragma comment(lib, "CORE_RL_libxml_.lib")
-#        if defined(MAGICKCORE_LQR_DELEGATE)
-#          pragma comment(lib, "CORE_RL_lqr_.lib")
-#        endif
-#        pragma comment(lib, "CORE_RL_magick_.lib")
-#        pragma comment(lib, "CORE_RL_Magick++_.lib")
-#        if defined(MAGICKCORE_PANGOCAIRO_DELEGATE)
-#          pragma comment(lib, "CORE_RL_cairo_.lib")
-#          pragma comment(lib, "CORE_RL_pango_.lib")
-#          pragma comment(lib, "CORE_RL_pixman_.lib")
-#        endif
-#        if defined(MAGICKCORE_PNG_DELEGATE)
-#          pragma comment(lib, "CORE_RL_png_.lib")
+#        if defined(MAGICKCORE_LZMA_DELEGATE)
+#          pragma comment(lib, "CORE_RL_lzma_.lib")
 #        endif
 #        if defined(MAGICKCORE_RAW_R_DELEGATE)
 #          pragma comment(lib, "CORE_RL_libraw_.lib")
 #        endif
 #        if defined(MAGICKCORE_RSVG_DELEGATE)
-#          pragma comment(lib, "CORE_RL_croco_.lib")
 #          pragma comment(lib, "CORE_RL_librsvg_.lib")
+#        endif
+#        if defined(MAGICKCORE_XML_DELEGATE)
+#          pragma comment(lib, "CORE_RL_libxml_.lib")
+#        endif
+#        if defined(MAGICKCORE_LQR_DELEGATE)
+#          pragma comment(lib, "CORE_RL_ffi_.lib")
+#          pragma comment(lib, "CORE_RL_glib_.lib")
+#          pragma comment(lib, "CORE_RL_lqr_.lib")
+#          pragma comment(lib, "winmm.lib")
+#        endif
+#        if defined(MAGICKCORE_LIBOPENJP2_DELEGATE)
+#          pragma comment(lib, "CORE_RL_openjpeg_.lib")
+#        endif
+#        if defined(MAGICKCORE_PANGOCAIRO_DELEGATE)
+#          pragma comment(lib, "CORE_RL_pango_.lib")
+#          pragma comment(lib, "CORE_RL_pixman_.lib")
+#        endif
+#        if defined(MAGICKCORE_PNG_DELEGATE)
+#          pragma comment(lib, "CORE_RL_png_.lib")
 #        endif
 #        if defined(MAGICKCORE_TIFF_DELEGATE)
 #          pragma comment(lib, "CORE_RL_tiff_.lib")
@@ -240,16 +236,17 @@ namespace MagickCore
 #        if defined(MAGICKCORE_FREETYPE_DELEGATE)
 #          pragma comment(lib, "CORE_RL_ttf_.lib")
 #        endif
-#        pragma comment(lib, "CORE_RL_wand_.lib")
 #        if defined(MAGICKCORE_WEBP_DELEGATE)
 #          pragma comment(lib, "CORE_RL_webp_.lib")
-#        endif
-#        if defined(MAGICKCORE_X11_DELEGATE)
-#          pragma comment(lib, "CORE_RL_xlib_.lib")
 #        endif
 #        if defined(MAGICKCORE_ZLIB_DELEGATE)
 #          pragma comment(lib, "CORE_RL_zlib_.lib")
 #        endif
+#        pragma comment(lib, "CORE_RL_coders_.lib")
+#        pragma comment(lib, "CORE_RL_filters_.lib")
+#        pragma comment(lib, "CORE_RL_Magick++_.lib")
+#        pragma comment(lib, "CORE_RL_magick_.lib")
+#        pragma comment(lib, "CORE_RL_wand_.lib")
 #      endif
 #      if defined(_WIN32_WCE)
 #        pragma comment(lib, "wsock32.lib")
@@ -260,13 +257,13 @@ namespace MagickCore
 #    endif
 #  endif
 #else
-# if __GNUC__ >= 4
-#  define MagickPPExport __attribute__ ((visibility ("default")))
-#  define MagickPPPrivate  __attribute__ ((visibility ("hidden")))
-# else
-#   define MagickPPExport
-#   define MagickPPPrivate
-# endif
+#  if __GNUC__ >= 4
+#    define MagickPPExport __attribute__ ((visibility ("default")))
+#    define MagickPPPrivate  __attribute__ ((visibility ("hidden")))
+#  else
+#    define MagickPPExport
+#    define MagickPPPrivate
+#  endif
 #endif
 
 #if (defined(WIN32) || defined(WIN64)) && defined(_VISUALC_)
@@ -460,26 +457,28 @@ namespace Magick
   using MagickCore::CompressionType;
   using MagickCore::UndefinedCompression;
   using MagickCore::NoCompression;
+  using MagickCore::B44ACompression;
+  using MagickCore::B44Compression;
   using MagickCore::BZipCompression;
   using MagickCore::DXT1Compression;
   using MagickCore::DXT3Compression;
   using MagickCore::DXT5Compression;
   using MagickCore::FaxCompression;
   using MagickCore::Group4Compression;
-  using MagickCore::JPEGCompression;
-  using MagickCore::JPEG2000Compression;
-  using MagickCore::LosslessJPEGCompression;
-  using MagickCore::LZWCompression;
-  using MagickCore::RLECompression;
-  using MagickCore::ZipCompression;
-  using MagickCore::ZipSCompression;
-  using MagickCore::PizCompression;
-  using MagickCore::Pxr24Compression;
-  using MagickCore::B44Compression;
-  using MagickCore::B44ACompression;
-  using MagickCore::LZMACompression;
   using MagickCore::JBIG1Compression;
   using MagickCore::JBIG2Compression;
+  using MagickCore::JPEG2000Compression;
+  using MagickCore::JPEGCompression;
+  using MagickCore::LosslessJPEGCompression;
+  using MagickCore::LZMACompression;
+  using MagickCore::LZWCompression;
+  using MagickCore::PizCompression;
+  using MagickCore::Pxr24Compression;
+  using MagickCore::RLECompression;
+  using MagickCore::WebPCompression;
+  using MagickCore::ZipCompression;
+  using MagickCore::ZipSCompression;
+  using MagickCore::ZstdCompression;
 
   // Decoration types
   using MagickCore::DecorationType;
@@ -932,9 +931,15 @@ namespace Magick
   using MagickCore::ResourceType;
   using MagickCore::AreaResource;
   using MagickCore::DiskResource;
+  using MagickCore::FileResource;
   using MagickCore::MapResource;
   using MagickCore::MemoryResource;
   using MagickCore::ThreadResource;
+  using MagickCore::TimeResource;
+  using MagickCore::ThrottleResource;
+  using MagickCore::WidthResource;
+  using MagickCore::HeightResource;
+  using MagickCore::ListLengthResource;
 
   // Resolution units
   using MagickCore::ResolutionType;

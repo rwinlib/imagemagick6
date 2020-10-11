@@ -1,11 +1,11 @@
 /*
-  Copyright 1999-2017 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2020 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
-  You may not use this file except in compliance with the License.
+  You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
   
-    https://www.imagemagick.org/script/license.php
+    https://imagemagick.org/script/license.php
   
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -82,10 +82,10 @@ typedef struct _ImageAttribute
   char
     *key,
     *value;
-                                                                                
+
   MagickBooleanType
     compression;
-                                                                                
+
   struct _ImageAttribute
     *previous,
     *next;  /* deprecated */
@@ -326,6 +326,7 @@ extern MagickExport void
   AllocateNextImage(const ImageInfo *,Image *) magick_attribute((deprecated)),
   *CloneMemory(void *,const void *,const size_t) magick_attribute((deprecated)),
   ConstituteComponentTerminus(void) magick_attribute((deprecated)),
+  *CropImageToHBITMAP(Image *,const RectangleInfo *,ExceptionInfo *),
   DestroyConstitute(void),
   DestroyImageAttributes(Image *) magick_attribute((deprecated)),
   DestroyImages(Image *) magick_attribute((deprecated)),
@@ -338,6 +339,7 @@ extern MagickExport void
     magick_attribute((deprecated)),
   GetTokenToken(const char *,const char **,char *),
   IdentityAffine(AffineMatrix *) magick_attribute((deprecated)),
+  *ImageToHBITMAP(Image *,ExceptionInfo *),
   LiberateMemory(void **) magick_attribute((deprecated)),
   LiberateSemaphoreInfo(SemaphoreInfo **) magick_attribute((deprecated)),
   FormatString(char *,const char *,...)

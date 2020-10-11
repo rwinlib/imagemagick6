@@ -1,11 +1,11 @@
 /*
-  Copyright 1999-2017 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2020 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
-  You may not use this file except in compliance with the License.
+  You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
   
-    https://www.imagemagick.org/script/license.php
+    https://imagemagick.org/script/license.php
   
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,6 +24,12 @@ extern "C" {
 
 #include <stdarg.h>
 #include "magick/semaphore.h"
+
+#if defined(__cplusplus) || defined(c_plusplus)
+# define magick_module  _module   /* reserved word in C++(20) */
+#else
+# define magick_module  module
+#endif
 
 typedef enum
 {
@@ -55,7 +61,7 @@ typedef struct _MagickInfo
     *description,
     *version,
     *note,
-    *module;
+    *magick_module;
 
   ImageInfo
     *image_info;
@@ -110,10 +116,10 @@ extern MagickExport const char
   *GetMagickMimeType(const MagickInfo *);
 
 extern MagickExport DecodeImageHandler
-  *GetImageDecoder(const MagickInfo *);
+  *GetImageDecoder(const MagickInfo *) magick_attribute((__pure__));
 
 extern MagickExport EncodeImageHandler
-  *GetImageEncoder(const MagickInfo *);
+  *GetImageEncoder(const MagickInfo *) magick_attribute((__pure__));
 
 extern MagickExport int
   GetMagickPrecision(void),
@@ -121,12 +127,12 @@ extern MagickExport int
 
 extern MagickExport MagickBooleanType
   GetImageMagick(const unsigned char *,const size_t,char *),
-  GetMagickAdjoin(const MagickInfo *),
-  GetMagickBlobSupport(const MagickInfo *),
-  GetMagickEndianSupport(const MagickInfo *),
-  GetMagickRawSupport(const MagickInfo *),
-  GetMagickSeekableStream(const MagickInfo *),
-  IsMagickCoreInstantiated(void),
+  GetMagickAdjoin(const MagickInfo *) magick_attribute((__pure__)),
+  GetMagickBlobSupport(const MagickInfo *) magick_attribute((__pure__)),
+  GetMagickEndianSupport(const MagickInfo *) magick_attribute((__pure__)),
+  GetMagickRawSupport(const MagickInfo *) magick_attribute((__pure__)),
+  GetMagickSeekableStream(const MagickInfo *) magick_attribute((__pure__)),
+  IsMagickCoreInstantiated(void) magick_attribute((__pure__)),
   MagickComponentGenesis(void),
   UnregisterMagickInfo(const char *);
 

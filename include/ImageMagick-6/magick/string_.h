@@ -1,11 +1,11 @@
 /*
-  Copyright 1999-2017 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2020 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
-  You may not use this file except in compliance with the License.
+  You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
   
-    https://www.imagemagick.org/script/license.php
+    https://imagemagick.org/script/license.php
   
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,6 +37,9 @@ typedef struct _StringInfo
   size_t
     length,
     signature;
+
+  char
+    *name;
 } StringInfo;
 
 extern MagickExport char
@@ -53,9 +56,11 @@ extern MagickExport char
   *StringInfoToString(const StringInfo *),
   **StringToArgv(const char *,int *),
   *StringToken(const char *,char **),
-  **StringToList(const char *);
+  **StringToList(const char *),
+  **StringToStrings(const char *,size_t *);
 
 extern MagickExport const char
+  *GetStringInfoName(const StringInfo *),
   *GetStringInfoPath(const StringInfo *);
 
 extern MagickExport double
@@ -66,21 +71,20 @@ extern MagickExport int
   CompareStringInfo(const StringInfo *,const StringInfo *);
 
 extern MagickExport MagickBooleanType
-  ConcatenateString(char **,const char *),
-  IsStringTrue(const char *),
-  IsStringNotFalse(const char *),
+  ConcatenateString(char **magick_restrict,const char *magick_restrict),
+  IsStringTrue(const char *) magick_attribute((__pure__)),
+  IsStringNotFalse(const char *) magick_attribute((__pure__)),
   SubstituteString(char **,const char *,const char *);
 
 extern MagickExport size_t
-  ConcatenateMagickString(char *,const char *,const size_t)
-    magick_attribute((__nonnull__)),
-  CopyMagickString(char *,const char *,const size_t)
-    magick_attribute((__nonnull__)),
+  ConcatenateMagickString(char *magick_restrict,const char *magick_restrict,
+    const size_t) magick_attribute((__nonnull__)),
+  CopyMagickString(char *magick_restrict,const char *magick_restrict,
+    const size_t) magick_attribute((__nonnull__)),
   GetStringInfoLength(const StringInfo *);
 
 extern MagickExport ssize_t
-  FormatMagickSize(const MagickSizeType,const MagickBooleanType,char *),
-  FormatMagickTime(const time_t,const size_t,char *);
+  FormatMagickSize(const MagickSizeType,const MagickBooleanType,char *);
 
 extern MagickExport StringInfo
   *AcquireStringInfo(const size_t),
@@ -103,6 +107,7 @@ extern MagickExport void
   SetStringInfo(StringInfo *,const StringInfo *),
   SetStringInfoDatum(StringInfo *,const unsigned char *),
   SetStringInfoLength(StringInfo *,const size_t),
+  SetStringInfoName(StringInfo *,const char *),
   SetStringInfoPath(StringInfo *,const char *),
   StripString(char *);
 
