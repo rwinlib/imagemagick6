@@ -1,5 +1,5 @@
 /*
-  Copyright 1999-2020 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999-2021 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
   You may not use this file except in compliance with the License.  You may
@@ -326,7 +326,6 @@ extern MagickExport void
   AllocateNextImage(const ImageInfo *,Image *) magick_attribute((deprecated)),
   *CloneMemory(void *,const void *,const size_t) magick_attribute((deprecated)),
   ConstituteComponentTerminus(void) magick_attribute((deprecated)),
-  *CropImageToHBITMAP(Image *,const RectangleInfo *,ExceptionInfo *),
   DestroyConstitute(void),
   DestroyImageAttributes(Image *) magick_attribute((deprecated)),
   DestroyImages(Image *) magick_attribute((deprecated)),
@@ -339,7 +338,6 @@ extern MagickExport void
     magick_attribute((deprecated)),
   GetTokenToken(const char *,const char **,char *),
   IdentityAffine(AffineMatrix *) magick_attribute((deprecated)),
-  *ImageToHBITMAP(Image *,ExceptionInfo *),
   LiberateMemory(void **) magick_attribute((deprecated)),
   LiberateSemaphoreInfo(SemaphoreInfo **) magick_attribute((deprecated)),
   FormatString(char *,const char *,...)
@@ -361,6 +359,12 @@ extern MagickExport void
   TemporaryFilename(char *) magick_attribute((deprecated)),
   TransformHSL(const Quantum,const Quantum,const Quantum,double *,double *,
     double *) magick_attribute((deprecated));
+
+#if defined(MAGICKCORE_WINGDI32_DELEGATE)
+extern MagickExport void
+  *CropImageToHBITMAP(Image *,const RectangleInfo *,ExceptionInfo *),
+  *ImageToHBITMAP(Image *,ExceptionInfo *);
+#endif
 
 /*
   Inline methods.

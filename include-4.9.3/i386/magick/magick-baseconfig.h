@@ -347,7 +347,7 @@
 #ifndef MAGICKCORE_HAVE_ISNAN
 #define MAGICKCORE_HAVE_ISNAN 1
 #endif
- */
+*/
 
 /* Define to 1 if you have the `j0' function. */
 #ifndef MAGICKCORE_HAVE_J0
@@ -358,6 +358,9 @@
 #ifndef MAGICKCORE_HAVE_J1
 #define MAGICKCORE_HAVE_J1 1
 #endif
+
+/* Define if you have jemalloc memory allocation library */
+/* #undef HAVE_JEMALLOC */
 
 /* Define if you have the <lcms2.h> header file. */
 #ifndef MAGICKCORE_HAVE_LCMS2_H
@@ -995,10 +998,9 @@
 #endif
 
 /* Define if you have libheif library */
-/* #undef HEIC_DELEGATE */
-
-/* Define if you have jemalloc memory allocation library */
-/* #undef HasJEMALLOC */
+#ifndef MAGICKCORE_HEIC_DELEGATE
+#define MAGICKCORE_HEIC_DELEGATE 1
+#endif
 
 /* Directory where ImageMagick architecture headers live. */
 #ifndef MAGICKCORE_INCLUDEARCH_PATH
@@ -1111,14 +1113,9 @@
 /* Define if you have OPENEXR library */
 /* #undef OPENEXR_DELEGATE */
 
-/* Name of package */
-#ifndef MAGICKCORE_PACKAGE
-#define MAGICKCORE_PACKAGE "ImageMagick"
-#endif
-
 /* Define to the address where bug reports for this package should be sent. */
 #ifndef MAGICKCORE_PACKAGE_BUGREPORT
-#define MAGICKCORE_PACKAGE_BUGREPORT "https://github.com/ImageMagick/ImageMagick6/issues"
+#define MAGICKCORE_PACKAGE_BUGREPORT "https://github.com/ImageMagick/ImageMagick/issues"
 #endif
 
 /* Define to the full name of this package. */
@@ -1128,7 +1125,7 @@
 
 /* Define to the full name and version of this package. */
 #ifndef MAGICKCORE_PACKAGE_STRING
-#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.11-34"
+#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.11-57"
 #endif
 
 /* Define to the one symbol short name of this package. */
@@ -1143,7 +1140,7 @@
 
 /* Define to the version of this package. */
 #ifndef MAGICKCORE_PACKAGE_VERSION
-#define MAGICKCORE_PACKAGE_VERSION "6.9.11-34"
+#define MAGICKCORE_PACKAGE_VERSION "6.9.11-57"
 #endif
 
 /* Define if you have PANGOCAIRO library */
@@ -1173,14 +1170,16 @@
 
 /* Number of bits in a pixel Quantum (8/16/32/64) */
 #ifndef MAGICKCORE_QUANTUM_DEPTH_OBSOLETE_IN_H
-#define MAGICKCORE_QUANTUM_DEPTH_OBSOLETE_IN_H "16"
+#define MAGICKCORE_QUANTUM_DEPTH_OBSOLETE_IN_H 16
 #endif
 
 /* Define if you have RAQM library */
 /* #undef RAQM_DELEGATE */
 
 /* Define if you have LIBRAW library */
-/* #undef RAW_R_DELEGATE */
+#ifndef MAGICKCORE_RAW_R_DELEGATE
+#define MAGICKCORE_RAW_R_DELEGATE 1
+#endif
 
 /* Define if you have RSVG library */
 #ifndef MAGICKCORE_RSVG_DELEGATE
@@ -1312,11 +1311,6 @@
 #endif
 
 
-/* Version number of package */
-#ifndef MAGICKCORE_VERSION
-#define MAGICKCORE_VERSION "6.9.11-34"
-#endif
-
 /* Define if you have WEBPMUX library */
 #ifndef MAGICKCORE_WEBPMUX_DELEGATE
 #define MAGICKCORE_WEBPMUX_DELEGATE 1
@@ -1352,7 +1346,7 @@
 
 /* Location of X11 configure files */
 #ifndef MAGICKCORE_X11_CONFIGURE_PATH
-#define MAGICKCORE_X11_CONFIGURE_PATH "/home/mingw-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.11-34/winpath.sh: path "=" is not mounted"
+#define MAGICKCORE_X11_CONFIGURE_PATH "/home/mingw-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.11-57/winpath.sh: path "=" is not mounted"
 #endif
 
 /* Define if you have X11 library */
