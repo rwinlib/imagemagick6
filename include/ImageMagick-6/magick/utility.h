@@ -33,7 +33,8 @@ typedef enum
   ExtensionPath,
   SubimagePath,
   CanonicalPath,
-  SubcanonicalPath
+  SubcanonicalPath,
+  BasePathSansCompressExtension
 } PathType;
 
 extern MagickExport char

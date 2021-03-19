@@ -343,11 +343,10 @@
 #define MAGICKCORE_HAVE_INTTYPES_H 1
 #endif
 
-/* Jeroen: manually disable, macro conflict with R?
+/* Define to 1 if you have the `isnan' function. */
 #ifndef MAGICKCORE_HAVE_ISNAN
 #define MAGICKCORE_HAVE_ISNAN 1
 #endif
-*/
 
 /* Define to 1 if you have the `j0' function. */
 #ifndef MAGICKCORE_HAVE_J0
@@ -827,6 +826,11 @@
 #define MAGICKCORE_HAVE_TIFFREADEXIFDIRECTORY 1
 #endif
 
+/* Define to 1 if you have the `TIFFReadGPSDirectory' function. */
+#ifndef MAGICKCORE_HAVE_TIFFREADGPSDIRECTORY
+#define MAGICKCORE_HAVE_TIFFREADGPSDIRECTORY 1
+#endif
+
 /* Define to 1 if you have the `TIFFSetErrorHandlerExt' function. */
 #ifndef MAGICKCORE_HAVE_TIFFSETERRORHANDLEREXT
 #define MAGICKCORE_HAVE_TIFFSETERRORHANDLEREXT 1
@@ -1044,13 +1048,13 @@
 
 /* Directory where architecture-dependent files live. */
 #ifndef MAGICKCORE_LIBRARY_PATH
-#define MAGICKCORE_LIBRARY_PATH "C:\\msys64\\mingw64\\lib\\ImageMagick-6.9.11\\"
+#define MAGICKCORE_LIBRARY_PATH "C:\\msys64\\mingw64\\lib\\ImageMagick-6.9.12\\"
 #endif
 
 /* Subdirectory of lib where ImageMagick architecture dependent files are
    installed. */
 #ifndef MAGICKCORE_LIBRARY_RELATIVE_PATH
-#define MAGICKCORE_LIBRARY_RELATIVE_PATH "ImageMagick-6.9.11"
+#define MAGICKCORE_LIBRARY_RELATIVE_PATH "ImageMagick-6.9.12"
 #endif
 
 /* Binaries in libraries path base name (will be during install linked to bin)
@@ -1129,7 +1133,7 @@
 
 /* Define to the full name and version of this package. */
 #ifndef MAGICKCORE_PACKAGE_STRING
-#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.11-57"
+#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.12-3"
 #endif
 
 /* Define to the one symbol short name of this package. */
@@ -1144,7 +1148,7 @@
 
 /* Define to the version of this package. */
 #ifndef MAGICKCORE_PACKAGE_VERSION
-#define MAGICKCORE_PACKAGE_VERSION "6.9.11-57"
+#define MAGICKCORE_PACKAGE_VERSION "6.9.12-3"
 #endif
 
 /* Define if you have PANGOCAIRO library */
@@ -1350,7 +1354,7 @@
 
 /* Location of X11 configure files */
 #ifndef MAGICKCORE_X11_CONFIGURE_PATH
-#define MAGICKCORE_X11_CONFIGURE_PATH "/home/mingw-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.11-57/winpath.sh: path "=" is not mounted"
+#define MAGICKCORE_X11_CONFIGURE_PATH "/home/mingw-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.12-3/winpath.sh: path "=" is not mounted"
 #endif
 
 /* Define if you have X11 library */

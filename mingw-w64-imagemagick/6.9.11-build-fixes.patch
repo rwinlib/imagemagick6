@@ -71,4 +71,4 @@ diff -aurp ImageMagick-6.9.11-34-orig/magick/nt-base.h ImageMagick-6.9.11-34/mag
 -#  define wstat  _wstat
 +#  define wstat  _wstati64
  #endif
- #endif
+ #endif 
