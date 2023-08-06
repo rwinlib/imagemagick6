@@ -1,5 +1,5 @@
 /*
-  Copyright 1999-2021 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
 
   You may not use this file except in compliance with the License.  You may
@@ -19,6 +19,10 @@
 #define MAGICKCORE_MAGICK_TYPE_H
 
 #include "magick/magick-config.h"
+
+#if defined(MAGICKCORE_HAVE_UINTPTR_T)
+#  include <stdint.h>
+#endif
 
 #if defined(__cplusplus) || defined(c_plusplus)
 extern "C" {
@@ -144,7 +148,7 @@ typedef unsigned __int64 MagickSizeType;
 #define MagickSizeFormat  "I64u"
 #endif
 
-#if MAGICKCORE_HAVE_UINTPTR_T || defined(uintptr_t)
+#if defined(MAGICKCORE_HAVE_UINTPTR_T) || defined(uintptr_t)
 typedef uintptr_t MagickAddressType;
 #else
 /* Hope for the best, I guess. */
@@ -212,7 +216,7 @@ typedef enum
 
   The macros are thus is only true if the value given is NaN.
 */
-#if defined(MAGICKCORE_HAVE_ISNAN)
+#if defined(MAGICKCORE_HAVE_ISNAN) && !defined(__cplusplus) && !defined(c_plusplus)
 #  define IsNaN(a) isnan(a)
 #elif defined(_MSC_VER) && (_MSC_VER >= 1310)
 #  include <float.h>

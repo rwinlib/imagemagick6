@@ -7,7 +7,7 @@ pacman -Sy
 OUTPUT=$(mktemp -d)
 
 # Download files (-dd skips dependencies)
-pkgs=$(echo mingw-w64-{i686,x86_64,ucrt-x86_64}-${PACKAGE})
+pkgs=$(echo mingw-w64-{i686,x86_64,ucrt-x86_64}-{$PACKAGE,libjpeg-turbo})
 deps=$(pacman -Si $pkgs | grep 'Depends On' | grep -o 'mingw-w64-[_.a-z0-9-]*')
 URLS=$(pacman -Sp $pkgs $deps --cache=$OUTPUT)
 VERSION=$(pacman -Si mingw-w64-x86_64-${PACKAGE} | awk '/^Version/{print $3}')

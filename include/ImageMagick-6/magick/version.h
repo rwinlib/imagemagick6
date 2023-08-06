@@ -1,5 +1,5 @@
 /*
-  Copyright 1999-2021 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
   You may not use this file except in compliance with the License.
@@ -26,24 +26,25 @@ extern "C" {
   Define declarations.
 */
 #define MagickPackageName "ImageMagick"
-#define MagickCopyright  "(C) 1999-2021 ImageMagick Studio LLC"
+#define MagickCopyright  "(C) 1999 ImageMagick Studio LLC"
 #define MagickLibVersion  0x69C
 #define MagickLibVersionText  "6.9.12"
 #define MagickLibVersionNumber  7,0,0
-#define MagickLibAddendum  "-3"
+#define MagickLibAddendum  "-93"
 #define MagickLibInterface  7
 #define MagickLibMinInterface  7
 #define MagickPlatform  "x86_64"
 #define MagickppLibVersionText  "6.9.12"
 #define MagickppLibVersionNumber  9:0:0
-#define MagickppLibAddendum  "-3"
+#define MagickppLibAddendum  "-93"
 #define MagickppLibInterface  9
 #define MagickppLibMinInterface  9
-#define MagickReleaseDate  "2021-03-06"
+#define MagickGitRevision  "17898"
+#define MagickReleaseDate  "2023-07-30"
 #define MagickHomeURL  "file:///mingw64/share/doc/ImageMagick-6/index.html"
 #define MagickAuthoritativeLicense  \
   "https://imagemagick.org/script/license.php"
-#define MagickAuthoritativeURL  "https://imagemagick.org"
+#define MagickAuthoritativeURL  "https://legacy.imagemagick.org"
 #if (MAGICKCORE_QUANTUM_DEPTH == 8)
 #define MagickQuantumDepth  "Q8"
 #define MagickQuantumRange  "255"
@@ -60,10 +61,15 @@ extern "C" {
 #define MagickQuantumDepth  "Q?"
 #define MagickQuantumRange  "?"
 #endif
+#if defined(MAGICKCORE_HDRI_SUPPORT)
+#define MagickHDRISupport  "-HDRI"
+#else
+#define MagickHDRISupport  ""
+#endif
 #define MagickVersion  \
   MagickPackageName " " MagickLibVersionText MagickLibAddendum " " \
-  MagickQuantumDepth " " MagickPlatform " " MagickReleaseDate " " \
-  MagickAuthoritativeURL
+  MagickQuantumDepth MagickHDRISupport " " MagickPlatform " " \
+  MagickGitRevision " " MagickAuthoritativeURL
 
 extern MagickExport char
   *GetMagickHomeURL(void);

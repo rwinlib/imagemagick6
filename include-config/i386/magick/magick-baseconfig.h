@@ -29,7 +29,7 @@
 #define MAGICKCORE_CIPHER_SUPPORT 1
 #endif
 
-/* Define to 1 if the `closedir' function returns void instead of `int'. */
+/* Define to 1 if the `closedir' function returns void instead of int. */
 /* #undef CLOSEDIR_VOID */
 
 /* coders subdirectory. */
@@ -39,7 +39,7 @@
 
 /* Directory where architecture-dependent configuration files live. */
 #ifndef MAGICKCORE_CONFIGURE_PATH
-#define MAGICKCORE_CONFIGURE_PATH "C:\\msys64\\mingw32\\etc\\ImageMagick-6\\"
+#define MAGICKCORE_CONFIGURE_PATH "D:\\a\\_temp\\msys64mingw32\\etc\\ImageMagick-6\\"
 #endif
 
 /* Subdirectory of lib where architecture-dependent configuration files live.
@@ -53,7 +53,7 @@
 
 /* Directory where ImageMagick documents live. */
 #ifndef MAGICKCORE_DOCUMENTATION_PATH
-#define MAGICKCORE_DOCUMENTATION_PATH "C:\\msys64\\mingw32\\share\\doc\\ImageMagick-6\\"
+#define MAGICKCORE_DOCUMENTATION_PATH "D:\\a\\_temp\\msys64mingw32\\share\\doc\\ImageMagick-6\\"
 #endif
 
 /* Define if you have Display Postscript */
@@ -64,7 +64,7 @@
 
 /* Directory where executables are installed. */
 #ifndef MAGICKCORE_EXECUTABLE_PATH
-#define MAGICKCORE_EXECUTABLE_PATH "C:\\msys64\\mingw32\\bin\\"
+#define MAGICKCORE_EXECUTABLE_PATH "D:\\a\\_temp\\msys64mingw32\\bin\\"
 #endif
 
 /* Define if you have FFTW library */
@@ -261,6 +261,11 @@
 #define MAGICKCORE_HAVE_FCNTL_H 1
 #endif
 
+/* Define to 1 if you have the <float.h> header file. */
+#ifndef MAGICKCORE_HAVE_FLOAT_H
+#define MAGICKCORE_HAVE_FLOAT_H 1
+#endif
+
 /* Define to 1 if you have the `floor' function. */
 #ifndef MAGICKCORE_HAVE_FLOOR
 #define MAGICKCORE_HAVE_FLOOR 1
@@ -294,6 +299,9 @@
 
 /* Define to 1 if you have the `getdtablesize' function. */
 /* #undef HAVE_GETDTABLESIZE */
+
+/* Define to 1 if you have the `getentropy' function. */
+/* #undef HAVE_GETENTROPY */
 
 /* Define to 1 if you have the `getexecname' function. */
 /* #undef HAVE_GETEXECNAME */
@@ -408,6 +416,17 @@
 /* Define to 1 if you have the <mach-o/dyld.h> header file. */
 /* #undef HAVE_MACH_O_DYLD_H */
 
+/* Define to 1 if your system has a GNU libc compatible `malloc' function, and
+   to 0 otherwise. */
+#ifndef MAGICKCORE_HAVE_MALLOC
+#define MAGICKCORE_HAVE_MALLOC 1
+#endif
+
+/* Define to 1 if you have the <malloc.h> header file. */
+#ifndef MAGICKCORE_HAVE_MALLOC_H
+#define MAGICKCORE_HAVE_MALLOC_H 1
+#endif
+
 /* Define to 1 if <wchar.h> declares mbstate_t. */
 #ifndef MAGICKCORE_HAVE_MBSTATE_T
 #define MAGICKCORE_HAVE_MBSTATE_T 1
@@ -418,14 +437,17 @@
 #define MAGICKCORE_HAVE_MEMMOVE 1
 #endif
 
-/* Define to 1 if you have the <memory.h> header file. */
-#ifndef MAGICKCORE_HAVE_MEMORY_H
-#define MAGICKCORE_HAVE_MEMORY_H 1
-#endif
-
 /* Define to 1 if you have the `memset' function. */
 #ifndef MAGICKCORE_HAVE_MEMSET
 #define MAGICKCORE_HAVE_MEMSET 1
+#endif
+
+/* Define to 1 if you have the <minix/config.h> header file. */
+/* #undef HAVE_MINIX_CONFIG_H */
+
+/* Define to 1 if you have the `mkdir' function. */
+#ifndef MAGICKCORE_HAVE_MKDIR
+#define MAGICKCORE_HAVE_MKDIR 1
 #endif
 
 /* Define to 1 if you have the `mkstemp' function. */
@@ -435,6 +457,9 @@
 
 /* Define to 1 if you have a working `mmap' system call. */
 /* #undef HAVE_MMAP */
+
+/* Define if you have the mtmalloc memory allocation library */
+/* #undef HAVE_MTMALLOC */
 
 /* Define to 1 if you have the `munmap' function. */
 /* #undef HAVE_MUNMAP */
@@ -456,6 +481,9 @@
 
 /* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
 /* #undef HAVE_NDIR_H */
+
+/* Define to 1 if you have the <netdb.h> header file. */
+/* #undef HAVE_NETDB_H */
 
 /* Define to 1 if you have the <netinet/in.h> header file. */
 /* #undef HAVE_NETINET_IN_H */
@@ -520,6 +548,11 @@
 #define MAGICKCORE_HAVE_PTHREAD_PRIO_INHERIT 1
 #endif
 
+/* Define to 1 if you have the `putenv' function. */
+#ifndef MAGICKCORE_HAVE_PUTENV
+#define MAGICKCORE_HAVE_PUTENV 1
+#endif
+
 /* Define to 1 if you have the `pwrite' function. */
 /* #undef HAVE_PWRITE */
 
@@ -536,6 +569,12 @@
 
 /* Define to 1 if you have the `readlink' function. */
 /* #undef HAVE_READLINK */
+
+/* Define to 1 if your system has a GNU libc compatible `realloc' function,
+   and to 0 otherwise. */
+#ifndef MAGICKCORE_HAVE_REALLOC
+#define MAGICKCORE_HAVE_REALLOC 1
+#endif
 
 /* Define to 1 if you have the `realpath' function. */
 /* #undef HAVE_REALPATH */
@@ -601,19 +640,24 @@
 #define MAGICKCORE_HAVE_STDBOOL_H 1
 #endif
 
+/* Define to 1 if you have the <stddef.h> header file. */
+#ifndef MAGICKCORE_HAVE_STDDEF_H
+#define MAGICKCORE_HAVE_STDDEF_H 1
+#endif
+
 /* Define to 1 if you have the <stdint.h> header file. */
 #ifndef MAGICKCORE_HAVE_STDINT_H
 #define MAGICKCORE_HAVE_STDINT_H 1
 #endif
 
+/* Define to 1 if you have the <stdio.h> header file. */
+#ifndef MAGICKCORE_HAVE_STDIO_H
+#define MAGICKCORE_HAVE_STDIO_H 1
+#endif
+
 /* Define to 1 if you have the <stdlib.h> header file. */
 #ifndef MAGICKCORE_HAVE_STDLIB_H
 #define MAGICKCORE_HAVE_STDLIB_H 1
-#endif
-
-/* define if the compiler supports ISO C++ standard library */
-#ifndef MAGICKCORE_HAVE_STD_LIBS
-#define MAGICKCORE_HAVE_STD_LIBS /**/
 #endif
 
 /* Define to 1 if you have the `strcasecmp' function. */
@@ -644,7 +688,7 @@
 #define MAGICKCORE_HAVE_STRERROR 1
 #endif
 
-/* Define to 1 if you have the `strerror_r' function. */
+/* Define if you have `strerror_r'. */
 /* #undef HAVE_STRERROR_R */
 
 /* Define to 1 if cpp supports the ANSI # stringizing operator. */
@@ -723,6 +767,11 @@
 /* Define to 1 if you have the `sysconf' function. */
 /* #undef HAVE_SYSCONF */
 
+/* Define to 1 if you have the `system' function. */
+#ifndef MAGICKCORE_HAVE_SYSTEM
+#define MAGICKCORE_HAVE_SYSTEM 1
+#endif
+
 /* Define to 1 if you have the <sys/dir.h> header file, and it defines `DIR'.
    */
 /* #undef HAVE_SYS_DIR_H */
@@ -761,11 +810,6 @@
 
 /* Define to 1 if you have the <sys/syslimits.h> header file. */
 /* #undef HAVE_SYS_SYSLIMITS_H */
-
-/* Define to 1 if you have the <sys/timeb.h> header file. */
-#ifndef MAGICKCORE_HAVE_SYS_TIMEB_H
-#define MAGICKCORE_HAVE_SYS_TIMEB_H 1
-#endif
 
 /* Define to 1 if you have the <sys/times.h> header file. */
 /* #undef HAVE_SYS_TIMES_H */
@@ -1010,12 +1054,12 @@
 
 /* Directory where ImageMagick architecture headers live. */
 #ifndef MAGICKCORE_INCLUDEARCH_PATH
-#define MAGICKCORE_INCLUDEARCH_PATH "C:\\msys64\\mingw32\\include\\ImageMagick-6\\"
+#define MAGICKCORE_INCLUDEARCH_PATH "D:\\a\\_temp\\msys64mingw32\\include\\ImageMagick-6\\"
 #endif
 
 /* Directory where ImageMagick headers live. */
 #ifndef MAGICKCORE_INCLUDE_PATH
-#define MAGICKCORE_INCLUDE_PATH "C:\\msys64\\mingw32\\include\\ImageMagick-6\\"
+#define MAGICKCORE_INCLUDE_PATH "D:\\a\\_temp\\msys64mingw32\\include\\ImageMagick-6\\"
 #endif
 
 /* ImageMagick is formally installed under prefix */
@@ -1031,9 +1075,6 @@
 #define MAGICKCORE_JPEG_DELEGATE 1
 #endif
 
-/* Define if you have brunsli library */
-/* #undef JXL_DELEGATE */
-
 /* Define if you have LCMS library */
 #ifndef MAGICKCORE_LCMS_DELEGATE
 #define MAGICKCORE_LCMS_DELEGATE 1
@@ -1046,7 +1087,7 @@
 
 /* Directory where architecture-dependent files live. */
 #ifndef MAGICKCORE_LIBRARY_PATH
-#define MAGICKCORE_LIBRARY_PATH "C:\\msys64\\mingw32\\lib\\ImageMagick-6.9.12\\"
+#define MAGICKCORE_LIBRARY_PATH "D:\\a\\_temp\\msys64mingw32\\lib\\ImageMagick-6.9.12\\"
 #endif
 
 /* Subdirectory of lib where ImageMagick architecture dependent files are
@@ -1070,6 +1111,11 @@
 
 /* Native module suffix */
 /* #undef LTDL_MODULE_EXT */
+
+/* Define if running the test suite so that test #27 works on MinGW. */
+#ifndef MAGICKCORE_LT_MINGW_STATIC_TESTSUITE_HACK
+#define MAGICKCORE_LT_MINGW_STATIC_TESTSUITE_HACK 1
+#endif
 
 /* Define to the sub-directory where libtool stores uninstalled libraries. */
 #ifndef MAGICKCORE_LT_OBJDIR
@@ -1121,7 +1167,7 @@
 
 /* Define to the address where bug reports for this package should be sent. */
 #ifndef MAGICKCORE_PACKAGE_BUGREPORT
-#define MAGICKCORE_PACKAGE_BUGREPORT "https://github.com/ImageMagick/ImageMagick/issues"
+#define MAGICKCORE_PACKAGE_BUGREPORT "https://github.com/ImageMagick/ImageMagick6/issues"
 #endif
 
 /* Define to the full name of this package. */
@@ -1131,7 +1177,7 @@
 
 /* Define to the full name and version of this package. */
 #ifndef MAGICKCORE_PACKAGE_STRING
-#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.12-3"
+#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.12-93"
 #endif
 
 /* Define to the one symbol short name of this package. */
@@ -1141,12 +1187,12 @@
 
 /* Define to the home page for this package. */
 #ifndef MAGICKCORE_PACKAGE_URL
-#define MAGICKCORE_PACKAGE_URL "https://imagemagick.org"
+#define MAGICKCORE_PACKAGE_URL "https://legacy.imagemagick.org"
 #endif
 
 /* Define to the version of this package. */
 #ifndef MAGICKCORE_PACKAGE_VERSION
-#define MAGICKCORE_PACKAGE_VERSION "6.9.12-3"
+#define MAGICKCORE_PACKAGE_VERSION "6.9.12-93"
 #endif
 
 /* Define if you have PANGOCAIRO library */
@@ -1171,7 +1217,7 @@
    your system. */
 /* #undef PTHREAD_CREATE_JOINABLE */
 
-/* Pixel cache threshold in MB (defaults to available memory) */
+/* Pixel cache memory threshold (defaults to available memory) */
 /* #undef PixelCacheThreshold */
 
 /* Number of bits in a pixel Quantum (8/16/32/64) */
@@ -1222,7 +1268,7 @@
 
 /* Directory where architecture-independent configuration files live. */
 #ifndef MAGICKCORE_SHARE_PATH
-#define MAGICKCORE_SHARE_PATH "C:\\msys64\\mingw32\\share\\ImageMagick-6\\"
+#define MAGICKCORE_SHARE_PATH "D:\\a\\_temp\\msys64mingw32\\share\\ImageMagick-6\\"
 #endif
 
 /* Subdirectory of lib where architecture-independent configuration files
@@ -1269,7 +1315,9 @@
 /* Define to 1 if the `S_IS*' macros in <sys/stat.h> do not work properly. */
 /* #undef STAT_MACROS_BROKEN */
 
-/* Define to 1 if you have the ANSI C header files. */
+/* Define to 1 if all of the C90 standard headers exist (not just the ones
+   required in a freestanding environment). This macro is provided for
+   backward compatibility; new code need not use it. */
 #ifndef MAGICKCORE_STDC_HEADERS
 #define MAGICKCORE_STDC_HEADERS 1
 #endif
@@ -1287,11 +1335,6 @@
 #define MAGICKCORE_TIFF_DELEGATE 1
 #endif
 
-/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
-#ifndef MAGICKCORE_TIME_WITH_SYS_TIME
-#define MAGICKCORE_TIME_WITH_SYS_TIME 1
-#endif
-
 /* Define to 1 if your <sys/time.h> declares `struct tm'. */
 /* #undef TM_IN_SYS_TIME */
 
@@ -1299,21 +1342,87 @@
 #ifndef _ALL_SOURCE
 # define _ALL_SOURCE 1
 #endif
+/* Enable general extensions on macOS.  */
+#ifndef _DARWIN_C_SOURCE
+# define _DARWIN_C_SOURCE 1
+#endif
+/* Enable general extensions on Solaris.  */
+#ifndef __EXTENSIONS__
+# define __EXTENSIONS__ 1
+#endif
 /* Enable GNU extensions on systems that have them.  */
 #ifndef _GNU_SOURCE
 # define _GNU_SOURCE 1
 #endif
-/* Enable threading extensions on Solaris.  */
+/* Enable X/Open compliant socket functions that do not require linking
+   with -lxnet on HP-UX 11.11.  */
+#ifndef _HPUX_ALT_XOPEN_SOCKET_API
+# define _HPUX_ALT_XOPEN_SOCKET_API 1
+#endif
+/* Identify the host operating system as Minix.
+   This macro does not affect the system headers' behavior.
+   A future release of Autoconf may stop defining this macro.  */
+#ifndef _MINIX
+/* # undef _MINIX */
+#endif
+/* Enable general extensions on NetBSD.
+   Enable NetBSD compatibility extensions on Minix.  */
+#ifndef _NETBSD_SOURCE
+# define _NETBSD_SOURCE 1
+#endif
+/* Enable OpenBSD compatibility extensions on NetBSD.
+   Oddly enough, this does nothing on OpenBSD.  */
+#ifndef _OPENBSD_SOURCE
+# define _OPENBSD_SOURCE 1
+#endif
+/* Define to 1 if needed for POSIX-compatible behavior.  */
+#ifndef _POSIX_SOURCE
+/* # undef _POSIX_SOURCE */
+#endif
+/* Define to 2 if needed for POSIX-compatible behavior.  */
+#ifndef _POSIX_1_SOURCE
+/* # undef _POSIX_1_SOURCE */
+#endif
+/* Enable POSIX-compatible threading on Solaris.  */
 #ifndef _POSIX_PTHREAD_SEMANTICS
 # define _POSIX_PTHREAD_SEMANTICS 1
+#endif
+/* Enable extensions specified by ISO/IEC TS 18661-5:2014.  */
+#ifndef __STDC_WANT_IEC_60559_ATTRIBS_EXT__
+# define __STDC_WANT_IEC_60559_ATTRIBS_EXT__ 1
+#endif
+/* Enable extensions specified by ISO/IEC TS 18661-1:2014.  */
+#ifndef __STDC_WANT_IEC_60559_BFP_EXT__
+# define __STDC_WANT_IEC_60559_BFP_EXT__ 1
+#endif
+/* Enable extensions specified by ISO/IEC TS 18661-2:2015.  */
+#ifndef __STDC_WANT_IEC_60559_DFP_EXT__
+# define __STDC_WANT_IEC_60559_DFP_EXT__ 1
+#endif
+/* Enable extensions specified by ISO/IEC TS 18661-4:2015.  */
+#ifndef __STDC_WANT_IEC_60559_FUNCS_EXT__
+# define __STDC_WANT_IEC_60559_FUNCS_EXT__ 1
+#endif
+/* Enable extensions specified by ISO/IEC TS 18661-3:2015.  */
+#ifndef __STDC_WANT_IEC_60559_TYPES_EXT__
+# define __STDC_WANT_IEC_60559_TYPES_EXT__ 1
+#endif
+/* Enable extensions specified by ISO/IEC TR 24731-2:2010.  */
+#ifndef __STDC_WANT_LIB_EXT2__
+# define __STDC_WANT_LIB_EXT2__ 1
+#endif
+/* Enable extensions specified by ISO/IEC 24747:2009.  */
+#ifndef __STDC_WANT_MATH_SPEC_FUNCS__
+# define __STDC_WANT_MATH_SPEC_FUNCS__ 1
 #endif
 /* Enable extensions on HP NonStop.  */
 #ifndef _TANDEM_SOURCE
 # define _TANDEM_SOURCE 1
 #endif
-/* Enable general extensions on Solaris.  */
-#ifndef __EXTENSIONS__
-# define __EXTENSIONS__ 1
+/* Enable X/Open extensions.  Define to 500 only if necessary
+   to make mbstate_t available.  */
+#ifndef _XOPEN_SOURCE
+/* # undef _XOPEN_SOURCE */
 #endif
 
 
@@ -1352,7 +1461,7 @@
 
 /* Location of X11 configure files */
 #ifndef MAGICKCORE_X11_CONFIGURE_PATH
-#define MAGICKCORE_X11_CONFIGURE_PATH "/home/mingw-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.12-3/winpath.sh: path "=" is not mounted"
+#define MAGICKCORE_X11_CONFIGURE_PATH "/d/a/rtools-packages/rtools-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.12-93/winpath.sh: path "=" is not mounted"
 #endif
 
 /* Define if you have X11 library */
@@ -1383,11 +1492,6 @@
 #define MAGICKCORE_ZSTD_DELEGATE 1
 #endif
 
-/* Enable large inode numbers on Mac OS X 10.5.  */
-#ifndef _DARWIN_USE_64_BIT_INODE
-# define _DARWIN_USE_64_BIT_INODE 1
-#endif
-
 /* Number of bits in a file offset, on hosts where this is settable. */
 #ifndef MAGICKCORE__FILE_OFFSET_BITS
 #define MAGICKCORE__FILE_OFFSET_BITS 64
@@ -1401,16 +1505,6 @@
 
 /* Define for large files, on AIX-style hosts. */
 /* #undef _LARGE_FILES */
-
-/* Define to 1 if on MINIX. */
-/* #undef _MINIX */
-
-/* Define to 2 if the system does not provide POSIX.1 features except with
-   this defined. */
-/* #undef _POSIX_1_SOURCE */
-
-/* Define to 1 if you need to in order for `stat' and other things to work. */
-/* #undef _POSIX_SOURCE */
 
 /* Define for Solaris 2.5.1 so the uint32_t typedef from <sys/synch.h>,
    <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
@@ -1427,7 +1521,8 @@
    #define below would cause a syntax error. */
 /* #undef _UINT8_T */
 
-/* Define to 1 if type `char' is unsigned and you are not using gcc.  */
+/* Define to 1 if type `char' is unsigned and your compiler does not
+   predefine this macro.  */
 #ifndef __CHAR_UNSIGNED__
 /* # undef __CHAR_UNSIGNED__ */
 #endif
@@ -1473,6 +1568,9 @@
    if such a type exists, and if the system does not define it. */
 /* #undef intptr_t */
 
+/* Define to rpl_malloc if the replacement function should be used. */
+/* #undef malloc */
+
 /* Define to a type if <wchar.h> does not define. */
 /* #undef mbstate_t */
 
@@ -1482,21 +1580,25 @@
 /* Define to `long int' if <sys/types.h> does not define. */
 /* #undef off_t */
 
-/* Define to `int' if <sys/types.h> does not define. */
+/* Define as a signed integer type capable of holding a process identifier. */
 /* #undef pid_t */
+
+/* Define to rpl_realloc if the replacement function should be used. */
+/* #undef realloc */
 
 /* Define to the equivalent of the C99 'restrict' keyword, or to
    nothing if this is not supported.  Do not define if restrict is
-   supported directly.  */
+   supported only directly.  */
 #ifndef _magickcore_restrict
-#define _magickcore_restrict __restrict
+#define _magickcore_restrict __restrict__
 #endif
-/* Work around a bug in Sun C++: it does not support _Restrict or
-   __restrict__, even though the corresponding Sun C compiler ends up with
-   "#define restrict _Restrict" or "#define restrict __restrict__" in the
-   previous line.  Perhaps some future version of Sun C++ will work with
-   restrict; if so, hopefully it defines __RESTRICT like Sun C does.  */
-#if defined __SUNPRO_CC && !defined __RESTRICT
+/* Work around a bug in older versions of Sun C++, which did not
+   #define __restrict__ or support _Restrict or __restrict__
+   even though the corresponding Sun C compiler ended up with
+   "#define restrict _Restrict" or "#define restrict __restrict__"
+   in the previous line.  This workaround can be removed once
+   we assume Oracle Developer Studio 12.5 (2016) or later.  */
+#if defined __SUNPRO_CC && !defined __RESTRICT && !defined __restrict__
 # define _Restrict
 # define __restrict__
 #endif

@@ -1,5 +1,5 @@
 /*
-  Copyright 1999-2021 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
 
   You may not use this file except in compliance with the License.  You may
@@ -46,7 +46,6 @@ extern "C" {
 #  endif
 # endif
 #endif
-
 
 #if !defined(MAGICKCORE_HDRI_ENABLE) && defined(MAGICKCORE_HDRI_ENABLE_OBSOLETE_IN_H)
 # warning "you should set MAGICKCORE_HDRI_ENABLE to sensible default set it to configure time default"
