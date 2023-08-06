@@ -39,6 +39,7 @@
  - mingw-w64-x86_64-zlib-1.2.11-9100-any.pkg.tar.xz
  - mingw-w64-x86_64-libpng-1.6.37-9100-any.pkg.tar.xz
  - mingw-w64-x86_64-freetype-2.10.4-9500-any.pkg.tar.xz
+ - mingw-w64-x86_64-libjpeg-turbo-2.0.5-9000-any.pkg.tar.xz
  - mingw-w64-x86_64-jasper-2.0.16-1-any.pkg.tar.xz
  - mingw-w64-x86_64-libtiff-4.5.1-9600-any.pkg.tar.xz
  - mingw-w64-x86_64-lcms2-2.9-9002-any.pkg.tar.xz
@@ -71,6 +72,7 @@
  - mingw-w64-ucrt-x86_64-zlib-1.2.11-9100-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-libpng-1.6.37-9100-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-freetype-2.10.4-9500-any.pkg.tar.xz
+ - mingw-w64-ucrt-x86_64-libjpeg-turbo-2.0.5-9000-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-jasper-2.0.16-1-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-libtiff-4.5.1-9600-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-lcms2-2.9-9002-any.pkg.tar.xz
