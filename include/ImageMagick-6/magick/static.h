@@ -1,5 +1,5 @@
 /*
-  Copyright 1999-2021 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
   You may not use this file except in compliance with the License.  You may
@@ -187,7 +187,6 @@ extern ModuleExport size_t
   RegisterXCFImage(void),
   RegisterXPMImage(void),
   RegisterXPSImage(void),
-  RegisterXTRNImage(void),
   RegisterXVImage(void),
   RegisterXWDImage(void),
   RegisterYCBCRImage(void),
@@ -353,7 +352,6 @@ extern ModuleExport void
   UnregisterXCFImage(void),
   UnregisterXPMImage(void),
   UnregisterXPSImage(void),
-  UnregisterXTRNImage(void),
   UnregisterXVImage(void),
   UnregisterXWDImage(void),
   UnregisterYCBCRImage(void),

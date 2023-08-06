@@ -1,5 +1,5 @@
 /*
-  Copyright 1999-2021 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
 
   You may not use this file except in compliance with the License.  You may
@@ -57,7 +57,8 @@ typedef enum
 {
   UndefinedDirection,
   RightToLeftDirection,
-  LeftToRightDirection
+  LeftToRightDirection,
+  TopToBottomDirection
 } DirectionType;
 
 typedef enum
@@ -354,6 +355,9 @@ typedef struct _DrawInfo
 
   char
     *id;
+
+  ImageInfo
+    *image_info;
 } DrawInfo;
 
 typedef struct _PrimitiveInfo

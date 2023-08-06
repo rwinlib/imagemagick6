@@ -1,5 +1,5 @@
 /*
-  Copyright 1999-2021 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
 
   You may not use this file except in compliance with the License.  You may
@@ -135,8 +135,8 @@ static inline double PerceptibleReciprocal(const double x)
   return(sign/MagickEpsilon);
 }   
 
-static inline MagickRealType GetPixelLuma(const Image *magick_restrict image,
-  const PixelPacket *magick_restrict pixel)
+static inline MagickRealType GetPixelLuma(
+  const Image *magick_restrict image,const PixelPacket *magick_restrict pixel)
 {
   MagickRealType
     intensity;
@@ -165,6 +165,15 @@ static inline MagickRealType GetPixelLuminance(
   return(intensity);
 }
 
+static inline void GetPixelPacketRGBA(const Quantum red,const Quantum green,
+  const Quantum blue,const Quantum opacity,PixelPacket *magick_restrict pixel)
+{
+  pixel->red=red;
+  pixel->green=green;
+  pixel->blue=blue;
+  pixel->opacity=opacity;
+}
+
 static inline MagickBooleanType IsPixelAtDepth(const Quantum pixel,
   const QuantumAny range)
 {
@@ -178,7 +187,7 @@ static inline MagickBooleanType IsPixelAtDepth(const Quantum pixel,
     (((MagickRealType) range*pixel)/QuantumRange+0.5)))/range+0.5);
 #else
   quantum=(Quantum) (((MagickRealType) QuantumRange*((QuantumAny)
-    (((MagickRealType) range*pixel)/QuantumRange+0.5)))/range);
+    (((MagickRealType) range*pixel)/QuantumRange+0.5)))/(MagickRealType) range);
 #endif
   return(pixel == quantum ? MagickTrue : MagickFalse);
 }
@@ -197,7 +206,8 @@ static inline MagickBooleanType IsPixelGray(const PixelPacket *pixel)
   return(MagickFalse);
 }
 
-static inline MagickBooleanType IsPixelMonochrome(const PixelPacket *pixel)
+static inline MagickBooleanType IsPixelMonochrome(
+  const PixelPacket *pixel)
 {
   MagickRealType
     green_blue,

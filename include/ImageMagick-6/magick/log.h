@@ -1,5 +1,5 @@
 /*
-  Copyright 1999-2021 ImageMagick Studio LLC, a non-profit organization
+  Copyright 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
   
   You may not use this file except in compliance with the License.  You may
@@ -63,15 +63,18 @@ typedef struct _LogInfo
 typedef void
   (*MagickLogMethod)(const LogEventType,const char *);
 
+extern const MagickExport LogInfo
+  **GetLogInfoList(const char *,size_t *,ExceptionInfo *);
+
 extern MagickExport char
   **GetLogList(const char *,size_t *,ExceptionInfo *);
 
-extern MagickExport const char
-  *GetLogName(void),
+extern MagickExport char
+  *GetLogName(void) magick_attribute((__pure__)),
   *SetLogName(const char *);
 
-extern MagickExport const LogInfo
-  **GetLogInfoList(const char *,size_t *,ExceptionInfo *);
+extern MagickExport LogEventType
+  GetLogEventMask(void) magick_attribute((__pure__));
 
 extern MagickExport LogEventType
   SetLogEventMask(const char *);
