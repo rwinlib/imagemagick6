@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuremap [
+  <!ELEMENT configuremap (configure)+>
+  <!ATTLIST configuremap xmlns CDATA #FIXED ''>
+  <!ELEMENT configure EMPTY>
+  <!ATTLIST configure xmlns CDATA #FIXED '' name NMTOKEN #REQUIRED
+    value CDATA #REQUIRED>
+]>
+<!--
+  ImageMagick build configuration.
+-->
+<configuremap>
+  <configure name="CC" value="gcc"/>
+  <configure name="CFLAGS" value="-DLIBXML_STATIC -ID:/a/_temp/msys64/mingw64/include/libxml2 -ID:/a/_temp/msys64/mingw64/include/webp -ID:/a/_temp/msys64/mingw64/include/webp -mms-bitfields -DPCRE_STATIC -ID:/a/_temp/msys64/mingw64/include/cairo -ID:/a/_temp/msys64/mingw64/include/glib-2.0 -ID:/a/_temp/msys64/mingw64/lib/glib-2.0/include -ID:/a/_temp/msys64/mingw64/include/pixman-1 -ID:/a/_temp/msys64/mingw64/include/freetype2 -ID:/a/_temp/msys64/mingw64/include/libpng16 -pthread -mms-bitfields -DPCRE_STATIC -ID:/a/_temp/msys64/mingw64/include/librsvg-2.0 -ID:/a/_temp/msys64/mingw64/include/gdk-pixbuf-2.0 -ID:/a/_temp/msys64/mingw64/include/cairo -ID:/a/_temp/msys64/mingw64/include/glib-2.0 -ID:/a/_temp/msys64/mingw64/lib/glib-2.0/include -ID:/a/_temp/msys64/mingw64/include/pixman-1 -ID:/a/_temp/msys64/mingw64/include/freetype2 -ID:/a/_temp/msys64/mingw64/include/libpng16 -ID:/a/_temp/msys64/mingw64/include/libraw -ID:/a/_temp/msys64/mingw64/include/libpng16  -mms-bitfields -DPCRE_STATIC -ID:/a/_temp/msys64/mingw64/include/pango-1.0 -ID:/a/_temp/msys64/mingw64/include/fribidi -ID:/a/_temp/msys64/mingw64/include/cairo -ID:/a/_temp/msys64/mingw64/include/glib-2.0 -ID:/a/_temp/msys64/mingw64/lib/glib-2.0/include -ID:/a/_temp/msys64/mingw64/include/pixman-1 -ID:/a/_temp/msys64/mingw64/include/freetype2 -ID:/a/_temp/msys64/mingw64/include/libpng16  -DOPJ_STATIC -ID:/a/_temp/msys64/mingw64/include/openjpeg-2.3  -ID:/a/_temp/msys64/mingw64/include/libheif -ID:/a/_temp/msys64/mingw64/include/libde265 -ID:/a/_temp/msys64/mingw64/include/freetype2 -ID:/a/_temp/msys64/mingw64/include/libpng16     -Wall -march=nocona -msahf -mtune=generic -O2 -pipe   -mtune=core2 -fexceptions -pthread -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16"/>
+  <configure name="CODER_PATH" value="/mingw64/lib/ImageMagick-6.9.12/modules-Q16/coders"/>
+  <configure name="CONFIGURE_PATH" value="/mingw64/etc/ImageMagick-6/"/>
+  <configure name="CONFIGURE" value="../ImageMagick-6.9.12-96/configure  '--prefix=/mingw64' '--build=x86_64-w64-mingw32' '--host=x86_64-w64-mingw32' '--disable-docs' '--disable-deprecated' '--disable-legacy-support' '--disable-hdri' '--enable-static' '--disable-shared' '--with-threads' '--disable-openmp' '--without-modules' '--enable-zero-configuration' '--enable-silent-rules' '--with-windows-font-dir=c:/Windows/fonts' '--with-magick-plus-plus' '--with-zlib' '--with-pango' '--with-xml' '--with-freetype' '--with-lzma' '--with-png' '--with-fftw' '--with-lcms' '--with-openjp2' '--with-rsvg' '--with-webp' '--with-raw' '--with-heic' '--without-gslib' '--without-fontconfig' '--without-gs-font-dir' '--without-autotrace' '--without-dps' '--without-fpx' '--without-jbig' '--without-perl' '--without-x' 'build_alias=x86_64-w64-mingw32' 'host_alias=x86_64-w64-mingw32' 'CC=gcc' 'CFLAGS=-march=nocona -msahf -mtune=generic -O2 -pipe  ' 'LDFLAGS=-pipe' 'LIBS=-lpango-1.0 -lm -lfribidi -lcairo-gobject -lcairo -lz -lpixman-1 -lfreetype -lpng16 -lz -lgobject-2.0 -lffi -lglib-2.0 -lintl -liconv -lws2_32 -lole32 -lwinmm -lshlwapi -lpcre -lintl -liconv -lpcre -lntdll -lgdi32 -lgdiplus -ldnsapi -liphlpapi -luserenv -lbcrypt -ladvapi32' 'CPPFLAGS=-D__USE_MINGW_ANSI_STDIO=1' 'PKG_CONFIG_PATH=/mingw64/lib/pkgconfig:/mingw64/share/pkgconfig' 'CXX=g++' 'CXXFLAGS=-march=nocona -msahf -mtune=generic -O2 -pipe'"/>
+  <configure name="COPYRIGHT" value="Copyright (C) 1999 ImageMagick Studio LLC"/>
+  <configure name="CPPFLAGS" value="-I/mingw64/include/ImageMagick-6 -D_LIB -D_MT"/>
+  <configure name="CXXFLAGS" value="-march=nocona -msahf -mtune=generic -O2 -pipe -pthread"/>
+  <configure name="CXX" value="g++"/>
+  <configure name="DEFS" value="-DHAVE_CONFIG_H"/>
+  <configure name="DELEGATES" value="bzlib fftw freetype heic jng jpeg lcms lzma openjp2 pango png ps raw rsvg tiff webp xml zlib zstd"/>
+  <configure name="DISTCHECK_CONFIG_FLAGS" value="'CC=gcc' 'CFLAGS=-march=nocona -msahf -mtune=generic -O2 -pipe  ' 'CPPFLAGS=-D__USE_MINGW_ANSI_STDIO=1' 'CXX=g++' 'LDFLAGS=-pipe' 'LIBS=-lpango-1.0 -lm -lfribidi -lcairo-gobject -lcairo -lz -lpixman-1 -lfreetype -lpng16 -lz -lgobject-2.0 -lffi -lglib-2.0 -lintl -liconv -lws2_32 -lole32 -lwinmm -lshlwapi -lpcre -lintl -liconv -lpcre -lntdll -lgdi32 -lgdiplus -ldnsapi -liphlpapi -luserenv -lbcrypt -ladvapi32'  --disable-deprecated  --with-quantum-depth=16  --with-jemalloc=no  --with-umem=no  --with-autotrace=no  --with-dps=no  --with-fpx=no  --with-fontconfig=no  --with-gslib=no  --with-fontpath=  --with-gs-font-dir=no  --with-windows-font-dir=c:/Windows/fonts  --with-wmf=no  --with-perl=no "/>
+  <configure name="DOCUMENTATION_PATH" value="/mingw64/share/doc/ImageMagick-6"/>
+  <configure name="EXEC-PREFIX" value="/mingw64"/>
+  <configure name="EXECUTABLE_PATH" value="/mingw64/bin"/>
+  <configure name="FEATURES" value="DPC Zero-configuration Cipher"/>
+  <configure name="FILTER_PATH" value="/mingw64/lib/ImageMagick-6.9.12/modules-Q16/filters"/>
+  <configure name="GIT_REVISION" value="18004" />
+  <configure name="HOST" value="x86_64-w64-mingw32"/>
+  <configure name="INCLUDE_PATH" value="/mingw64/include/ImageMagick-6"/>
+  <configure name="LDFLAGS" value="-L/mingw64/lib -pipe"/>
+  <configure name="LIBRARY_PATH" value="/mingw64/lib/ImageMagick-6.9.12"/>
+  <configure name="LIBS" value="-lpango-1.0 -lm -lfribidi -lcairo-gobject -lcairo -lz -lpixman-1 -lfreetype -lpng16 -lz -lgobject-2.0 -lffi -lglib-2.0 -lintl -liconv -lws2_32 -lole32 -lwinmm -lshlwapi -lpcre -lintl -liconv -lpcre -lntdll -lgdi32 -lgdiplus -ldnsapi -liphlpapi -luserenv -lbcrypt -ladvapi32  -llcms2 -lm -lpthread -ltiff -lfreetype -lpng16 -lz  -ljpeg    -lpng16 -lz   -lfftw3 -lm    -lheif -lpthread -lstdc++ -laom -lm -lpthread -lde265 -lstdc++ -lx265 -lstdc++ -lgcc -lwebpmux -lwebpdemux -lwebp -lsharpyuv -lwebp -lsharpyuv       -llzma -lbz2  -lopenjp2 -lm -LD:/a/_temp/msys64/mingw64/lib/../lib -lpangocairo-1.0 -lpangowin32-1.0 -lusp10 -lgdi32 -lpango-1.0 -lm -lfribidi -lcairo -lz -lgobject-2.0 -lffi -lglib-2.0 -lintl -liconv -pthread -lws2_32 -lole32 -lwinmm -lshlwapi -lpcre -lintl -liconv -lpcre -lpixman-1 -lfreetype -lpng16 -lz -lraw_r -lstdc++ -llcms2 -lm -lpthread -LD:/a/_temp/msys64/mingw64/lib/../lib -lrsvg-2 -lm -lgdk_pixbuf-2.0 -lm -lintl -lgdiplus -ltiff -ljpeg -lpng -lole32 -ltiff -ljpeg -lz -ljpeg -lgio-2.0 -lz -lgmodule-2.0 -pthread -lcairo -lz -lgobject-2.0 -lffi -lglib-2.0 -lintl -liconv -pthread -lws2_32 -lole32 -lwinmm -lshlwapi -lpcre -lintl -liconv -lpcre -lpixman-1 -lfreetype -lpng16 -lz -lxml2 -lz -liconv -lm -lws2_32  -lz   -lgdi32 -luser32 -lm    -lpthread   "/>
+  <configure name="LIB_VERSION_NUMBER" value="6,9,12,96"/>
+  <configure name="LIB_VERSION" value="0x69C"/>
+  <configure name="NAME" value="ImageMagick"/>
+  <configure name="PCFLAGS" value="-DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -D_LIB -D_MT"/>
+  <configure name="PREFIX" value="/mingw64"/>
+  <configure name="QuantumDepth" value="16"/>
+  <configure name="RELEASE_DATE" value="2023-09-23"/>
+  <configure name="SECURITY_POLICY" value="open"/>
+  <configure name="SHAREARCH_PATH" value="/mingw64/lib/ImageMagick-6.9.12/config-Q16"/>
+  <configure name="SHARE_PATH" value="/mingw64/share/ImageMagick-6"/>
+  <configure name="TARGET_CPU" value="x86_64"/>
+  <configure name="TARGET_OS" value="mingw32"/>
+  <configure name="TARGET_VENDOR" value="w64"/>
+  <configure name="VERSION" value="6.9.12"/>
+  <configure name="WEBSITE" value="https://legacy.imagemagick.org"/>
+</configuremap>

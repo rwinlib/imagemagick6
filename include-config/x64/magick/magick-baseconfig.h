@@ -29,9 +29,6 @@
 #define MAGICKCORE_CIPHER_SUPPORT 1
 #endif
 
-/* Define to 1 if the `closedir' function returns void instead of int. */
-/* #undef CLOSEDIR_VOID */
-
 /* coders subdirectory. */
 #ifndef MAGICKCORE_CODER_DIRNAME
 #define MAGICKCORE_CODER_DIRNAME "coders"
@@ -235,9 +232,6 @@
 /* Define to 1 if you have the <dlfcn.h> header file. */
 /* #undef HAVE_DLFCN_H */
 
-/* Define to 1 if you don't have `vprintf' but do have `_doprnt.' */
-/* #undef HAVE_DOPRNT */
-
 /* Define to 1 if you have the `erf' function. */
 #ifndef MAGICKCORE_HAVE_ERF
 #define MAGICKCORE_HAVE_ERF 1
@@ -416,12 +410,6 @@
 /* Define to 1 if you have the <mach-o/dyld.h> header file. */
 /* #undef HAVE_MACH_O_DYLD_H */
 
-/* Define to 1 if your system has a GNU libc compatible `malloc' function, and
-   to 0 otherwise. */
-#ifndef MAGICKCORE_HAVE_MALLOC
-#define MAGICKCORE_HAVE_MALLOC 1
-#endif
-
 /* Define to 1 if you have the <malloc.h> header file. */
 #ifndef MAGICKCORE_HAVE_MALLOC_H
 #define MAGICKCORE_HAVE_MALLOC_H 1
@@ -569,12 +557,6 @@
 
 /* Define to 1 if you have the `readlink' function. */
 /* #undef HAVE_READLINK */
-
-/* Define to 1 if your system has a GNU libc compatible `realloc' function,
-   and to 0 otherwise. */
-#ifndef MAGICKCORE_HAVE_REALLOC
-#define MAGICKCORE_HAVE_REALLOC 1
-#endif
 
 /* Define to 1 if you have the `realpath' function. */
 /* #undef HAVE_REALPATH */
@@ -798,9 +780,6 @@
 /* Define to 1 if you have the <sys/resource.h> header file. */
 /* #undef HAVE_SYS_RESOURCE_H */
 
-/* Define to 1 if you have the <sys/select.h> header file. */
-/* #undef HAVE_SYS_SELECT_H */
-
 /* Define to 1 if you have the <sys/sendfile.h> header file. */
 /* #undef HAVE_SYS_SENDFILE_H */
 
@@ -954,12 +933,6 @@
 #define MAGICKCORE_HAVE_UTIME_H 1
 #endif
 
-/* Define to 1 if you have the `vfork' function. */
-/* #undef HAVE_VFORK */
-
-/* Define to 1 if you have the <vfork.h> header file. */
-/* #undef HAVE_VFORK_H */
-
 /* Define to 1 if you have the `vfprintf' function. */
 #ifndef MAGICKCORE_HAVE_VFPRINTF
 #define MAGICKCORE_HAVE_VFPRINTF 1
@@ -967,11 +940,6 @@
 
 /* Define to 1 if you have the `vfprintf_l' function. */
 /* #undef HAVE_VFPRINTF_L */
-
-/* Define to 1 if you have the `vprintf' function. */
-#ifndef MAGICKCORE_HAVE_VPRINTF
-#define MAGICKCORE_HAVE_VPRINTF 1
-#endif
 
 /* Define to 1 if you have the `vsnprintf' function. */
 #ifndef MAGICKCORE_HAVE_VSNPRINTF
@@ -993,12 +961,6 @@
 #ifndef MAGICKCORE_HAVE_WCHAR_H
 #define MAGICKCORE_HAVE_WCHAR_H 1
 #endif
-
-/* Define to 1 if `fork' works. */
-/* #undef HAVE_WORKING_FORK */
-
-/* Define to 1 if `vfork' works. */
-/* #undef HAVE_WORKING_VFORK */
 
 /* Define to 1 if you have the <xlocale.h> header file. */
 /* #undef HAVE_XLOCALE_H */
@@ -1174,7 +1136,7 @@
 
 /* Define to the full name and version of this package. */
 #ifndef MAGICKCORE_PACKAGE_STRING
-#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.12-93"
+#define MAGICKCORE_PACKAGE_STRING "ImageMagick 6.9.12-96"
 #endif
 
 /* Define to the one symbol short name of this package. */
@@ -1189,7 +1151,7 @@
 
 /* Define to the version of this package. */
 #ifndef MAGICKCORE_PACKAGE_VERSION
-#define MAGICKCORE_PACKAGE_VERSION "6.9.12-93"
+#define MAGICKCORE_PACKAGE_VERSION "6.9.12-96"
 #endif
 
 /* Define if you have PANGOCAIRO library */
@@ -1233,21 +1195,6 @@
 /* Define if you have RSVG library */
 #ifndef MAGICKCORE_RSVG_DELEGATE
 #define MAGICKCORE_RSVG_DELEGATE 1
-#endif
-
-/* Define to the type of arg 1 for `select'. */
-#ifndef MAGICKCORE_SELECT_TYPE_ARG1
-#define MAGICKCORE_SELECT_TYPE_ARG1 int
-#endif
-
-/* Define to the type of args 2, 3 and 4 for `select'. */
-#ifndef MAGICKCORE_SELECT_TYPE_ARG234
-#define MAGICKCORE_SELECT_TYPE_ARG234 (int *)
-#endif
-
-/* Define to the type of arg 5 for `select'. */
-#ifndef MAGICKCORE_SELECT_TYPE_ARG5
-#define MAGICKCORE_SELECT_TYPE_ARG5 (struct timeval *)
 #endif
 
 /* Setjmp/longjmp are thread safe */
@@ -1458,7 +1405,7 @@
 
 /* Location of X11 configure files */
 #ifndef MAGICKCORE_X11_CONFIGURE_PATH
-#define MAGICKCORE_X11_CONFIGURE_PATH "/d/a/rtools-packages/rtools-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.12-93/winpath.sh: path "=" is not mounted"
+#define MAGICKCORE_X11_CONFIGURE_PATH "/d/a/rtools-packages/rtools-packages/mingw-w64-imagemagick/src/ImageMagick-6.9.12-96/winpath.sh: path "=" is not mounted"
 #endif
 
 /* Define if you have X11 library */
@@ -1565,9 +1512,6 @@
    if such a type exists, and if the system does not define it. */
 /* #undef intptr_t */
 
-/* Define to rpl_malloc if the replacement function should be used. */
-/* #undef malloc */
-
 /* Define to a type if <wchar.h> does not define. */
 /* #undef mbstate_t */
 
@@ -1579,9 +1523,6 @@
 
 /* Define as a signed integer type capable of holding a process identifier. */
 /* #undef pid_t */
-
-/* Define to rpl_realloc if the replacement function should be used. */
-/* #undef realloc */
 
 /* Define to the equivalent of the C99 'restrict' keyword, or to
    nothing if this is not supported.  Do not define if restrict is
@@ -1634,11 +1575,6 @@
 /* Define to the type of an unsigned integer type wide enough to hold a
    pointer, if such a type exists, and if the system does not define it. */
 /* #undef uintptr_t */
-
-/* Define as `fork' if `vfork' does not work. */
-#ifndef _magickcore_vfork
-#define _magickcore_vfork fork
-#endif
 
 /* Define to empty if the keyword `volatile' does not work. Warning: valid
    code using `volatile' can become incorrect without. Disable with care. */

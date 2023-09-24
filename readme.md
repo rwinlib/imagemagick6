@@ -1,4 +1,4 @@
-# imagemagick 6.9.12.93-1
+# imagemagick 6.9.12.96-1
 
  - mingw-w64-i686-bzip2-1.0.8-1-any.pkg.tar.xz
  - mingw-w64-i686-fftw-3.3.8-9002-any.pkg.tar.xz
@@ -30,10 +30,10 @@
  - mingw-w64-i686-libxml2-2.10.3-1-any.pkg.tar.xz
  - mingw-w64-i686-librsvg-2.50.5-2-any.pkg.tar.xz
  - mingw-w64-i686-giflib-5.1.4-1-any.pkg.tar.xz
- - mingw-w64-i686-libwebp-1.1.0-1-any.pkg.tar.xz
+ - mingw-w64-i686-libwebp-1.3.2-1-any.pkg.tar.xz
  - mingw-w64-i686-openjpeg2-2.3.1-9600-any.pkg.tar.xz
  - mingw-w64-i686-zstd-1.4.4-1-any.pkg.tar.xz
- - mingw-w64-i686-imagemagick-6.9.12.93-1-any.pkg.tar.xz
+ - mingw-w64-i686-imagemagick-6.9.12.96-1-any.pkg.tar.xz
  - mingw-w64-x86_64-bzip2-1.0.8-1-any.pkg.tar.xz
  - mingw-w64-x86_64-fftw-3.3.8-9002-any.pkg.tar.xz
  - mingw-w64-x86_64-zlib-1.2.11-9100-any.pkg.tar.xz
@@ -51,6 +51,7 @@
  - mingw-w64-x86_64-expat-2.2.9-9002-any.pkg.tar.xz
  - mingw-w64-x86_64-gettext-0.19.8.1-9002-any.pkg.tar.xz
  - mingw-w64-x86_64-libffi-3.2.1-9002-any.pkg.tar.xz
+ - mingw-w64-x86_64-pcre-8.43-9002-any.pkg.tar.xz
  - mingw-w64-x86_64-glib2-2.58.3-2-any.pkg.tar.xz
  - mingw-w64-x86_64-gdk-pixbuf2-2.42.10-4-any.pkg.tar.xz
  - mingw-w64-x86_64-lzo2-2.10-9002-any.pkg.tar.xz
@@ -63,10 +64,10 @@
  - mingw-w64-x86_64-libxml2-2.10.3-1-any.pkg.tar.xz
  - mingw-w64-x86_64-librsvg-2.50.5-2-any.pkg.tar.xz
  - mingw-w64-x86_64-giflib-5.1.4-1-any.pkg.tar.xz
- - mingw-w64-x86_64-libwebp-1.1.0-1-any.pkg.tar.xz
+ - mingw-w64-x86_64-libwebp-1.3.2-1-any.pkg.tar.xz
  - mingw-w64-x86_64-openjpeg2-2.3.1-9600-any.pkg.tar.xz
  - mingw-w64-x86_64-zstd-1.4.4-1-any.pkg.tar.xz
- - mingw-w64-x86_64-imagemagick-6.9.12.93-1-any.pkg.tar.xz
+ - mingw-w64-x86_64-imagemagick-6.9.12.96-1-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-bzip2-1.0.8-1-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-fftw-3.3.8-9002-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-zlib-1.2.11-9100-any.pkg.tar.xz
@@ -84,6 +85,7 @@
  - mingw-w64-ucrt-x86_64-expat-2.2.9-9002-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-gettext-0.19.8.1-9002-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-libffi-3.2.1-9002-any.pkg.tar.xz
+ - mingw-w64-ucrt-x86_64-pcre-8.43-9002-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-glib2-2.58.3-2-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-gdk-pixbuf2-2.42.10-4-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-lzo2-2.10-9002-any.pkg.tar.xz
@@ -96,7 +98,7 @@
  - mingw-w64-ucrt-x86_64-libxml2-2.10.3-1-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-librsvg-2.50.5-2-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-giflib-5.1.4-1-any.pkg.tar.xz
- - mingw-w64-ucrt-x86_64-libwebp-1.1.0-1-any.pkg.tar.xz
+ - mingw-w64-ucrt-x86_64-libwebp-1.3.2-1-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-openjpeg2-2.3.1-9600-any.pkg.tar.xz
  - mingw-w64-ucrt-x86_64-zstd-1.4.4-1-any.pkg.tar.xz
- - mingw-w64-ucrt-x86_64-imagemagick-6.9.12.93-1-any.pkg.tar.xz
+ - mingw-w64-ucrt-x86_64-imagemagick-6.9.12.96-1-any.pkg.tar.xz
