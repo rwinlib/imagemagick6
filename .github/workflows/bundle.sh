@@ -47,5 +47,10 @@ mkdir -p include-config/{x64,i386}/magick
 cp -f ${OUTPUT}/ucrt64/include/ImageMagick-6/magick/magick-baseconfig.h include-config/x64/magick/
 cp -f ${OUTPUT}/mingw32/include/ImageMagick-6/magick/magick-baseconfig.h include-config/i386/magick/
 
+# HACK to make linker flags in R package consistent with future releases
+cp lib-8.3.0/x64/libpcre.a lib-8.3.0/x64/libpcre2-8.a
+cp lib-8.3.0/i386/libpcre.a lib-8.3.0/i386/libpcre2-8.a
+cp lib/libpcre.a lib/libpcre2-8.a
+
 # Cleanup
 rm -Rf ${OUTPUT}
